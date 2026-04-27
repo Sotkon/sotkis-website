@@ -314,7 +314,13 @@ export const WaveCanvas: React.FC = () => {
       ctx.restore();
     };
 
+    const isVisible = { current: true };
+
     const animate = () => {
+      if (!isVisible.current) {
+        animationRef.current = undefined;
+        return;
+      }
       // Background gradient
       const bgGradient = ctx.createRadialGradient(
         canvas.width * 0.5,
@@ -372,13 +378,28 @@ export const WaveCanvas: React.FC = () => {
       animationRef.current = requestAnimationFrame(animate);
     };
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible.current = entry.isIntersecting;
+        if (isVisible.current && !animationRef.current) {
+          animate();
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
+
     animate();
 
     return () => {
       window.removeEventListener('resize', resize);
+      observer.disconnect();
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
+        animationRef.current = undefined;
       }
+      blobsRef.current = [];
+      particlesRef.current = [];
     };
   }, []);
 
