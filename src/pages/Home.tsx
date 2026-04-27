@@ -46,7 +46,9 @@ export const Home: React.FC = () => {
   const t = homeTranslations[language];
   const videoplatRef = useRef<HTMLVideoElement>(null);
   const topEdgeRef = useRef<HTMLDivElement>(null);
-  const [scrollY, setScrollY] = React.useState(0);
+  const levelImgRef = useRef<HTMLImageElement>(null);
+  const accessImgRef = useRef<HTMLImageElement>(null);
+  const drsImgRef = useRef<HTMLImageElement>(null);
   const [flippedCards, setFlippedCards] = React.useState<{ [key: string]: boolean }>({
     level: false,
     access: false,
@@ -75,7 +77,16 @@ export const Home: React.FC = () => {
     const handleScroll = () => {
       if (rafId !== undefined) return;
       rafId = requestAnimationFrame(() => {
-        setScrollY(window.scrollY);
+        const y = window.scrollY;
+        if (levelImgRef.current) {
+          levelImgRef.current.style.transform = `translateY(${(y - 800) * 0.03}px)`;
+        }
+        if (accessImgRef.current) {
+          accessImgRef.current.style.transform = `scale(1.1) translateY(${(y - 800) * 0.05}px)`;
+        }
+        if (drsImgRef.current) {
+          drsImgRef.current.style.transform = `scale(1.1) translateY(${(y - 800) * 0.05}px)`;
+        }
         rafId = undefined;
       });
     };
@@ -192,9 +203,9 @@ export const Home: React.FC = () => {
               <a href="/level" className="home__card-link">
                 <div className="home__card-image">
                   <img
+                    ref={levelImgRef}
                     src={levelSmImage}
                     alt="Level monitoring sensors"
-                    style={{ transform: `translateY(${(scrollY - 800) * 0.03}px)` }}
                   />
                   <div className="home__card-overlay"></div>
                   <h3 className="home__card-title">{t.level.title}</h3>
@@ -222,9 +233,9 @@ export const Home: React.FC = () => {
               <a href="/access" className="home__card-link">
                 <div className="home__card-image">
                   <img
+                    ref={accessImgRef}
                     src={accessSmImage}
                     alt="Access control system"
-                    style={{ transform: `scale(1.1) translateY(${(scrollY - 800) * 0.05}px)` }}
                   />
                   <div className="home__card-overlay"></div>
                   <h3 className="home__card-title">{t.access.title}</h3>
@@ -252,9 +263,9 @@ export const Home: React.FC = () => {
               <a href="/drs" className="home__card-link">
                 <div className="home__card-image">
                   <img
+                    ref={drsImgRef}
                     src={drsSmImage}
                     alt="Deposit return system"
-                    style={{ transform: `scale(1.1) translateY(${(scrollY - 800) * 0.05}px)` }}
                   />
                   <div className="home__card-overlay"></div>
                   <h3 className="home__card-title">{t.drs.title}</h3>

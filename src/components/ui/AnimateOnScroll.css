@@ -7,7 +7,11 @@
   transition-delay: var(--animation-delay);
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--animation-easing);
-  will-change: opacity, transform, filter;
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll--visible {
+  will-change: auto;
 }
 
 /* Fade animation */

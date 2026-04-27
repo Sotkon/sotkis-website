@@ -16,7 +16,7 @@ export interface AnimateOnScrollProps extends React.HTMLAttributes<HTMLElement> 
   as?: keyof JSX.IntrinsicElements;
 }
 
-export const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
+const AnimateOnScrollInner: React.FC<AnimateOnScrollProps> = ({
   children,
   animation = 'fadeSlideUp',
   delay = 0,
@@ -48,3 +48,5 @@ export const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
     children
   );
 };
+
+export const AnimateOnScroll = React.memo(AnimateOnScrollInner);

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useMemo, useCallback } from 'react';
 import type { ReactNode } from 'react';
 
 type Language = 'pt' | 'en' | 'es' | 'fr' | 'gr' | 'cr';
@@ -19,17 +19,22 @@ interface LanguageProviderProps {
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const [language, setLanguage] = useState<Language>('pt');
 
-  const toggleLanguage = () => {
+  const toggleLanguage = useCallback(() => {
     setLanguage((prev) => (prev === 'pt' ? 'en' : 'pt'));
-  };
+  }, []);
 
   // Placeholder translation function - will be implemented with actual translations
-  const t = (key: string): string => {
+  const t = useCallback((key: string): string => {
     return key;
-  };
+  }, []);
+
+  const value = useMemo(
+    () => ({ language, setLanguage, toggleLanguage, t }),
+    [language, toggleLanguage, t]
+  );
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );
