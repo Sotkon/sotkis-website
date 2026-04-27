@@ -1,6 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
-import { Landing } from './pages/Landing';
 import { Home } from './pages/Home';
 import { Platform } from './pages/Platform';
 import { Paylt } from './pages/Paylt';
@@ -14,8 +13,8 @@ import { MobileApp } from './pages/MobileApp';
 function App() {
   return (
     <Routes>
-      {/* Landing page - no layout wrapper */}
-      <Route index element={<Landing />} />
+      {/* Redirect root to /home */}
+      <Route index element={<Navigate to="/home" replace />} />
 
       {/* Main site with layout */}
       <Route path="/" element={<Layout />}>
