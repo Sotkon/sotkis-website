@@ -249,6 +249,23 @@
   display: none;
 }
 
+.home__hero-iphone-mockup {
+  position: absolute;
+  right: clamp(220px, 30vw, 520px);
+  bottom: 0;
+  z-index: 11;
+  height: auto;
+  width: clamp(208px, 22vw, 364px);
+  object-fit: contain;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .home__hero-iphone-mockup {
+    display: none;
+  }
+}
+
 .home__hero-content {
   position: relative;
   z-index: 12;
@@ -964,6 +981,11 @@
 .home__scheme-logo img {
   height: 72px;
   width: auto;
+}
+
+.home__scheme--paylt {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
 }
 
 @media (max-width: 768px) {
@@ -2443,11 +2465,10 @@
 .playt-layers {
   flex: 1;
   max-width: 480px;
-  /* Gradient: darker bottom-left (#9BCB42) to lighter top-right */
-  background: linear-gradient(135deg, #8BBD38 0%, #9BCB42 40%, #A8D654 70%, #B5E066 100%);
-  border-radius: 1.5rem;
-  padding: 0.75rem;
-  box-shadow: 0 20px 60px rgba(124, 179, 66, 0.3);
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
 }
@@ -2555,6 +2576,13 @@
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
+  white-space: nowrap;
+}
+
+.playt-layers__below-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-xl);
   white-space: nowrap;
 }
 
