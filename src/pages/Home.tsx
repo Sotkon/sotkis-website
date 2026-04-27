@@ -20,7 +20,7 @@ import heroBgImageMobile from '../assets/DSC09612 copy.jpeg';
 import capaAssetImage from '../assets/capa-asset-1.webp';
 import logoPlayt from '../assets/logo-playt.webp';
 import iphoneMockupImage from '../assets/iPhone-Hand-Mockup.webp';
-import { CTASection } from '../components/common/CTASection';
+
 import './Home.css';
 
 const ArrowIcon = () => (
@@ -505,8 +505,6 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
-      <CTASection />
 
     </div>
   );
