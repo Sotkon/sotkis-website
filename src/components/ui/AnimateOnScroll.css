@@ -7,12 +7,7 @@
   transition-delay: var(--animation-delay);
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--animation-easing);
-  will-change: opacity, transform;
-}
-
-/* Release GPU layer after animation completes */
-.animate-on-scroll--visible {
-  will-change: auto;
+  will-change: opacity, transform, filter;
 }
 
 /* Fade animation */

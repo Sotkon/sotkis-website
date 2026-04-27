@@ -14,19 +14,12 @@ export const Header: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    let rafId: number | undefined;
     const handleScroll = () => {
-      if (rafId !== undefined) return;
-      rafId = requestAnimationFrame(() => {
-        setIsScrolled(window.scrollY > 50);
-        rafId = undefined;
-      });
+      setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (rafId !== undefined) cancelAnimationFrame(rafId);
-    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Close mobile menu when route changes

@@ -89,10 +89,6 @@
   display: none;
 }
 
-.home__hero-slideshow .home__hero-slide {
-  animation-play-state: paused;
-}
-
 .home__hero-bg-image {
   position: absolute;
   top: 0;
@@ -602,7 +598,7 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  background-attachment: scroll;
+  background-attachment: fixed;
   z-index: 0;
 }
 

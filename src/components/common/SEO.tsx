@@ -23,7 +23,7 @@ export const SEO: React.FC<SEOProps> = ({
   structuredData
 }) => {
   const location = useLocation();
-  const baseUrl = 'https://sotkis-website-d3gabphxf8d6cvbe.westeurope-01.azurewebsites.net';
+  const baseUrl = 'https://miguelmalungo.github.io/sotkissite';
   const currentUrl = canonical || `${baseUrl}${location.pathname}`;
   const fullTitle = `${title} | Sotkis - Sotkon Intelligent Systems`;
 
