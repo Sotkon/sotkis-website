@@ -1,6 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
-import { Landing } from './pages/Landing';
 import { Home } from './pages/Home';
 import { Platform } from './pages/Platform';
 import { Paylt } from './pages/Paylt';
