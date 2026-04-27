@@ -14,7 +14,7 @@ import accessSmImage from '../assets/newAccess.webp';
 import levelSmImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import drsSmImage from '../assets/DRSsm.webp';
 import trash4goodsImage from '../assets/trash4goods-pic.webp';
-import payltInfoImage from '../assets/playt-rainbow.webp';
+import payltInfoImage from '../assets/rainbow_homepage.png';
 import heroBgImage from '../assets/DSC09612.jpeg';
 import heroBgImageMobile from '../assets/DSC09612 copy.jpeg';
 import capaAssetImage from '../assets/capa-asset-1.webp';
