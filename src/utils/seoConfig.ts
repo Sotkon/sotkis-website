@@ -40,8 +40,8 @@ export const seoConfig: Record<string, PageSEO> = {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       'name': 'Sotkis - Sotkon Intelligent Systems',
-      'url': 'https://miguelmalungo.github.io/sotkissite',
-      'logo': 'https://miguelmalungo.github.io/sotkissite/assets/logotipo-sotkon-neg-preto.webp',
+      'url': 'https://sotkis-website-d3gabphxf8d6cvbe.westeurope-01.azurewebsites.net',
+      'logo': 'https://sotkis-website-d3gabphxf8d6cvbe.westeurope-01.azurewebsites.net/assets/logotipo-sotkon-neg-preto.webp',
       'description': 'Sistemas inteligentes para gestão de resíduos em cidades inteligentes',
       'address': {
         '@type': 'PostalAddress',
@@ -337,7 +337,7 @@ export const seoConfig: Record<string, PageSEO> = {
       '@type': 'ContactPage',
       'name': 'Contact Sotkis',
       'description': 'Página de contacto para soluções de gestão de resíduos',
-      'url': 'https://miguelmalungo.github.io/sotkissite/contact'
+      'url': 'https://sotkis-website-d3gabphxf8d6cvbe.westeurope-01.azurewebsites.net/contact'
     }
   }
 };
