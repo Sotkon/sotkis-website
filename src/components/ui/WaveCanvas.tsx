@@ -172,7 +172,7 @@ const createParticle = (canvas: HTMLCanvasElement): Particle => {
 
 export const WaveCanvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
   const timeRef = useRef(0);
   const blobsRef = useRef<Blob[]>([]);
   const particlesRef = useRef<Particle[]>([]);
@@ -184,13 +184,14 @@ export const WaveCanvas: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const isVisible = { current: false };
+
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = 'high';
 
-      // Reinitialize blobs with new dimensions
       blobsRef.current = [
         createBlob(canvas.width * 0.2, canvas.height * 0.3, 300, 0.2, 0.15, colors.green1),
         createBlob(canvas.width * 0.8, canvas.height * 0.25, 375, 0.15, 0.2, colors.green2),
@@ -369,16 +370,37 @@ export const WaveCanvas: React.FC = () => {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       timeRef.current += 0.012;
-      animationRef.current = requestAnimationFrame(animate);
+      if (isVisible.current) {
+        animationRef.current = requestAnimationFrame(animate);
+      } else {
+        animationRef.current = undefined;
+      }
     };
 
-    animate();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isVisible.current = entry.isIntersecting;
+          if (entry.isIntersecting && !animationRef.current) {
+            animationRef.current = requestAnimationFrame(animate);
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(canvas);
+    isVisible.current = true;
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
+      observer.disconnect();
       window.removeEventListener('resize', resize);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
+      blobsRef.current = [];
+      particlesRef.current = [];
     };
   }, []);
 

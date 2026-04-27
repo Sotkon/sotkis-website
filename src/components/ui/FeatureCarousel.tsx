@@ -40,29 +40,31 @@ export const FeatureCarousel: React.FC<FeatureCarouselProps> = ({
   useEffect(() => {
     if (!isFullBackground || !videoRef.current || !features[activeIndex]?.isVideo) return;
 
+    let rafId: number | undefined;
     const handleScroll = () => {
-      const video = videoRef.current;
-      const container = containerRef.current;
-      if (!video || !container) return;
-
-      const rect = container.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      // Calculate scroll progress: 0 when section enters viewport, 1 when it leaves
-      const scrollProgress = Math.max(0, Math.min(1,
-        (windowHeight - rect.top) / (windowHeight + rect.height)
-      ));
-
-      // Move between -50px and 50px for more visible parallax
-      const translateY = (scrollProgress - 0.5) * 100;
-
-      video.style.transform = `translateX(-50%) translateY(${translateY}px)`;
+      if (rafId !== undefined) return;
+      rafId = requestAnimationFrame(() => {
+        const video = videoRef.current;
+        const container = containerRef.current;
+        if (video && container) {
+          const rect = container.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          const scrollProgress = Math.max(0, Math.min(1,
+            (windowHeight - rect.top) / (windowHeight + rect.height)
+          ));
+          video.style.transform = `translateX(-50%) translateY(${(scrollProgress - 0.5) * 100}px)`;
+        }
+        rafId = undefined;
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId !== undefined) cancelAnimationFrame(rafId);
+    };
   }, [isFullBackground, activeIndex, features]);
 
   return (

@@ -70,11 +70,19 @@ export const Home: React.FC = () => {
   };
 
   useEffect(() => {
+    let rafId: number | undefined;
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (rafId !== undefined) return;
+      rafId = requestAnimationFrame(() => {
+        setScrollY(window.scrollY);
+        rafId = undefined;
+      });
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId !== undefined) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   useEffect(() => {
