@@ -18,8 +18,6 @@ import playtContentores from '../assets/playt-contentores.webp';
 import playtConectar from '../assets/playt-conectar.webp';
 import { MobileCarousel } from '../components/ui/MobileCarousel';
 import bgAccessIndiferenciados from '../assets/Extend_the_background_202604241609.jpeg';
-import bgDrsVidroPlastico from '../assets/Extend_the_background_202604241611.jpeg';
-import bgPapelOrganicos from '../assets/Extend_the_background_202604241613.jpeg';
 
 import softDashImg from '../assets/Software_DashboardsInterativos.mp4';
 import softAppImg from '../assets/Software_AplicaçãoCidadão.webp';
