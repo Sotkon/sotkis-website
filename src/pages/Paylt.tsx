@@ -18,7 +18,7 @@ import hardRestrictorImg from '../assets/Hardware_retritorVolume.webp';
 import hardDrsImg from '../assets/Hardware_sensoresDeteção.webp';
 import techPolicyImg from '../assets/Software_PLAYT.webp';
 import benefitMunicipioImg from '../assets/summer.webp';
-import benefitCidadaoImg from '../assets/Cidadão_Beneficios.webp';
+import benefitCidadaoImg from '../assets/Cidadao_Beneficios.webp';
 
 import './Paylt.css';
 
