@@ -12,7 +12,7 @@ import sotkisLevel1 from '../assets/sotkis-level-1.webp';
 import sotkisLevel2 from '../assets/sotkis-level-2.webp';
 import sotkisLevel3 from '../assets/sotkis-level-3.webp';
 import sotkisLevel from '../assets/sotkis-level.webp';
-import { CTASection } from '../components/common/CTASection';
+
 import './Level.css';
 
 export const Level: React.FC = () => {
@@ -202,8 +202,6 @@ export const Level: React.FC = () => {
           </div>
         </div>
       </section>
-
-      <CTASection />
 
       {/* Video Modal */}
       {isVideoModalOpen && (
