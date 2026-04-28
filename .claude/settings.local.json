@@ -19,7 +19,19 @@
       "Bash(grep -E \"^[A-ZÁÉÍÓÚ][^{}<>]{20,150}[.!?]$\")",
       "Bash(grep -E \"[A-ZÁÉÍÓÚ][a-záéíóú ]{30,}\")",
       "Bash(python3 -c \" import sys, re content = sys.stdin.read\\(\\) strings = re.findall\\(r'\\\\\"\\([^\\\\\"]{30,300}\\)\\\\\"', content\\) for s in strings: print\\(repr\\(s[:200]\\)\\) \")",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(grep \"\\\\.css$\")",
+      "Bash(certutil -hashfile \"C:/Users/MiguelGonçalves/source/repos/sotkis-website/src/assets/playt_competo.webp\" MD5)",
+      "Bash(node -e ' *)",
+      "Bash(curl -L -o \"playt-contentores.webp\" \"https://miguelmalungo.github.io/sotkissite/assets/playt-contentores-DogAzvjp.webp\" -w \"HTTP %{http_code} size %{size_download}\")",
+      "Bash(curl -L -o \"playt-conectar.webp\" \"https://miguelmalungo.github.io/sotkissite/assets/conectar-C3WTFtO2.webp\" -w \"HTTP %{http_code} size %{size_download}\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(npm run *)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :8080)",
+      "Bash(taskkill /PID 34484 /F)",
+      "PowerShell(Stop-Process -Id 34484 -Force -ErrorAction SilentlyContinue)"
     ]
   }
 }
