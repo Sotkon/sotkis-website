@@ -1067,7 +1067,7 @@
   color: var(--color-text-secondary);
 }
 
-/* Pills — proportional to 5-col details below: 1+2+2 */
+/* Pills — 1:2:2 to align with 5-col details below */
 .paylt__rebuilt-pills {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr;
@@ -1076,16 +1076,19 @@
 }
 
 .paylt__rebuilt-pill-wrap {
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: var(--spacing-xs);
 }
 
 .paylt__rebuilt-trophy {
-  width: 28px;
-  height: 28px;
+  position: absolute;
+  top: -14px;
+  right: -6px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
+  z-index: 1;
 }
 
 .paylt__rebuilt-pill {
