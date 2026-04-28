@@ -18,7 +18,8 @@
       "Bash(grep -oE 'APP DE[^\"]{0,100}')",
       "Bash(grep -E \"^[A-ZÁÉÍÓÚ][^{}<>]{20,150}[.!?]$\")",
       "Bash(grep -E \"[A-ZÁÉÍÓÚ][a-záéíóú ]{30,}\")",
-      "Bash(python3 -c \" import sys, re content = sys.stdin.read\\(\\) strings = re.findall\\(r'\\\\\"\\([^\\\\\"]{30,300}\\)\\\\\"', content\\) for s in strings: print\\(repr\\(s[:200]\\)\\) \")"
+      "Bash(python3 -c \" import sys, re content = sys.stdin.read\\(\\) strings = re.findall\\(r'\\\\\"\\([^\\\\\"]{30,300}\\)\\\\\"', content\\) for s in strings: print\\(repr\\(s[:200]\\)\\) \")",
+      "Bash(git checkout *)"
     ]
   }
 }
