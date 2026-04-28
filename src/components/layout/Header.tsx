@@ -46,7 +46,7 @@ export const Header: React.FC = () => {
     },
     { path: '/platform', label: 'Software' },
     { path: '/trash4goods', label: 'App Cidadão' },
-    { path: '/paylt', label: 'P(L)ayt' },
+    { path: '/P(L)ayt', label: 'P(L)ayt' },
   ];
 
   const toggleMobileMenu = () => {
@@ -89,11 +89,10 @@ export const Header: React.FC = () => {
   const isVideoHeroPage =
     location.pathname === '/home' ||
     location.pathname === '/platform' ||
-    location.pathname === '/paylt' ||
+    location.pathname === '/P(L)ayt' ||
     location.pathname === '/level' ||
     location.pathname === '/access' ||
     location.pathname === '/drs' ||
-    location.pathname === '/paylt' ||
     location.pathname === '/trash4goods' ||
     location.pathname === '/contact';
 

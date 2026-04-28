@@ -8,7 +8,7 @@ export const footerTranslations = {
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
         { label: "Software", path: "/platform" },
-        { label: "P(L)ayt", path: "/paylt" },
+        { label: "P(L)ayt", path: "/P(L)ayt" },
         { label: "APP Cidadão", path: "/trash4goods" }
       ]
     },
@@ -33,7 +33,7 @@ export const footerTranslations = {
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
         { label: "Software", path: "/platform" },
-        { label: "P(L)ayt", path: "/paylt" },
+        { label: "P(L)ayt", path: "/P(L)ayt" },
         { label: "Citizen APP", path: "/trash4goods" }
       ]
     },
@@ -58,7 +58,7 @@ export const footerTranslations = {
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
         { label: "Software", path: "/platform" },
-        { label: "P(L)ayt", path: "/paylt" },
+        { label: "P(L)ayt", path: "/P(L)ayt" },
         { label: "App Ciudadano", path: "/trash4goods" }
       ]
     },
@@ -83,7 +83,7 @@ export const footerTranslations = {
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
         { label: "Software", path: "/platform" },
-        { label: "P(L)ayt", path: "/paylt" },
+        { label: "P(L)ayt", path: "/P(L)ayt" },
         { label: "App Citoyen", path: "/trash4goods" }
       ]
     },
@@ -108,7 +108,7 @@ export const footerTranslations = {
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
         { label: "Software", path: "/platform" },
-        { label: "P(L)ayt", path: "/paylt" },
+        { label: "P(L)ayt", path: "/P(L)ayt" },
         { label: "Citizen APP", path: "/trash4goods" }
       ]
     },
@@ -133,7 +133,7 @@ export const footerTranslations = {
         { label: "Access", path: "/access" },
         { label: "DRS", path: "/drs" },
         { label: "Software", path: "/platform" },
-        { label: "P(L)ayt", path: "/paylt" },
+        { label: "P(L)ayt", path: "/P(L)ayt" },
         { label: "Citizen APP", path: "/trash4goods" }
       ]
     },

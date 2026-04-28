@@ -24,7 +24,7 @@ function App() {
         <Route path="access" element={<Access />} />
         <Route path="level" element={<Level />} />
         <Route path="drs" element={<DRS />} />
-        <Route path="paylt" element={<Paylt />} />
+        <Route path="P(L)ayt" element={<Paylt />} />
         <Route path="contact" element={<Contact />} />
         <Route path="trash4goods" element={<Trash4Goods />} />
       </Route>

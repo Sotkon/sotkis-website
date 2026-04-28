@@ -496,7 +496,7 @@ export const Home: React.FC = () => {
             </AnimateOnScroll>
             <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.6}>
               <div className="playt-layers__below-cta">
-                <Button href="/paylt" variant="primary" size="sm" className="playt-layers__cta-btn">
+                <Button href="/P(L)ayt" variant="primary" size="sm" className="playt-layers__cta-btn">
                   {t.paylt.button}
                   <ArrowIcon />
                 </Button>
