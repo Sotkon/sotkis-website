@@ -72,15 +72,6 @@ const createBlob = (
       this.radius = this.baseRadius * (1 + Math.sin(time * this.pulseSpeed) * this.wobbleAmount);
     },
     draw(ctx: CanvasRenderingContext2D) {
-      const innerGlow = ctx.createRadialGradient(
-        this.x - this.radius * 0.3,
-        this.y - this.radius * 0.3,
-        0,
-        this.x,
-        this.y,
-        this.radius * 1.2
-      );
-
       const rgbaMatch = this.color.match(/[\d.]+/g);
       if (!rgbaMatch) return;
       const r = rgbaMatch[0];
@@ -88,42 +79,27 @@ const createBlob = (
       const b = rgbaMatch[2];
       const a = parseFloat(rgbaMatch[3]);
 
-      innerGlow.addColorStop(
+      // Single radial gradient — no blur, no shadow pass
+      const gradient = ctx.createRadialGradient(
+        this.x - this.radius * 0.3,
+        this.y - this.radius * 0.3,
+        0,
+        this.x,
+        this.y,
+        this.radius * 1.2
+      );
+      gradient.addColorStop(
         0,
         `rgba(${Math.min(255, parseInt(r) + 80)}, ${Math.min(255, parseInt(g) + 60)}, ${Math.min(255, parseInt(b) + 40)}, ${a * 0.8})`
       );
-      innerGlow.addColorStop(0.3, this.color);
-      innerGlow.addColorStop(
-        0.7,
-        `rgba(${parseInt(r) * 0.7}, ${parseInt(g) * 0.7}, ${parseInt(b) * 0.7}, ${a * 0.6})`
-      );
-      innerGlow.addColorStop(1, 'transparent');
+      gradient.addColorStop(0.4, this.color);
+      gradient.addColorStop(1, 'transparent');
 
       ctx.save();
       ctx.globalCompositeOperation = 'screen';
-      ctx.fillStyle = innerGlow;
+      ctx.fillStyle = gradient;
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius * 1.2, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-
-      const shadowGradient = ctx.createRadialGradient(
-        this.x + this.radius * 0.2,
-        this.y + this.radius * 0.2,
-        this.radius * 0.5,
-        this.x,
-        this.y,
-        this.radius * 1.5
-      );
-      shadowGradient.addColorStop(0, 'transparent');
-      shadowGradient.addColorStop(0.5, 'rgba(0, 30, 0, 0.15)');
-      shadowGradient.addColorStop(1, 'transparent');
-
-      ctx.save();
-      ctx.globalCompositeOperation = 'multiply';
-      ctx.fillStyle = shadowGradient;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius * 1.5, 0, Math.PI * 2);
       ctx.fill();
       ctx.restore();
     },
@@ -134,7 +110,7 @@ const createParticle = (canvas: HTMLCanvasElement): Particle => {
   const particle: Particle = {
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    size: 1 + Math.random() * 3,
+    size: 1 + Math.random() * 2,
     speedX: (Math.random() - 0.5) * 0.5,
     speedY: (Math.random() - 0.5) * 0.5,
     opacity: 0.1 + Math.random() * 0.3,
@@ -142,7 +118,7 @@ const createParticle = (canvas: HTMLCanvasElement): Particle => {
     reset(canvas: HTMLCanvasElement) {
       this.x = Math.random() * canvas.width;
       this.y = Math.random() * canvas.height;
-      this.size = 1 + Math.random() * 3;
+      this.size = 1 + Math.random() * 2;
       this.speedX = (Math.random() - 0.5) * 0.5;
       this.speedY = (Math.random() - 0.5) * 0.5;
       this.opacity = 0.1 + Math.random() * 0.3;
@@ -158,22 +134,29 @@ const createParticle = (canvas: HTMLCanvasElement): Particle => {
     },
     draw(ctx: CanvasRenderingContext2D) {
       const currentOpacity = this.opacity * (0.5 + Math.sin(this.pulse) * 0.5);
-      const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 2);
-      gradient.addColorStop(0, `rgba(156, 204, 101, ${currentOpacity})`);
-      gradient.addColorStop(1, 'transparent');
-      ctx.fillStyle = gradient;
+      // Simple filled circle — no radialGradient per particle
+      ctx.save();
+      ctx.globalAlpha = currentOpacity;
+      ctx.fillStyle = 'rgba(156, 204, 101, 1)';
       ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fill();
+      ctx.restore();
     },
   };
   return particle;
 };
 
+// Canvas rendered at half resolution — CSS stretches it to fill; 75% fewer pixels
+const RESOLUTION = 0.5;
+const TARGET_FPS = 30;
+const FRAME_INTERVAL = 1000 / TARGET_FPS;
+
 export const WaveCanvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
   const timeRef = useRef(0);
+  const lastFrameRef = useRef(0);
   const blobsRef = useRef<Blob[]>([]);
   const particlesRef = useRef<Particle[]>([]);
 
@@ -185,30 +168,24 @@ export const WaveCanvas: React.FC = () => {
     if (!ctx) return;
 
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      ctx.imageSmoothingEnabled = true;
-      ctx.imageSmoothingQuality = 'high';
+      canvas.width = Math.floor(window.innerWidth * RESOLUTION);
+      canvas.height = Math.floor(window.innerHeight * RESOLUTION);
 
-      // Reinitialize blobs with new dimensions
       blobsRef.current = [
-        createBlob(canvas.width * 0.2, canvas.height * 0.3, 300, 0.2, 0.15, colors.green1),
-        createBlob(canvas.width * 0.8, canvas.height * 0.25, 375, 0.15, 0.2, colors.green2),
-        createBlob(canvas.width * 0.5, canvas.height * 0.7, 420, 0.18, 0.12, colors.green3),
-        createBlob(canvas.width * 0.15, canvas.height * 0.8, 270, 0.22, 0.18, colors.accent),
-        createBlob(canvas.width * 0.85, canvas.height * 0.65, 330, 0.12, 0.25, colors.green4),
-        createBlob(canvas.width * 0.6, canvas.height * 0.15, 240, 0.25, 0.15, colors.highlight),
-        createBlob(canvas.width * 0.35, canvas.height * 0.55, 285, 0.17, 0.22, colors.green1),
+        createBlob(canvas.width * 0.2,  canvas.height * 0.3,  150, 0.2,  0.15, colors.green1),
+        createBlob(canvas.width * 0.8,  canvas.height * 0.25, 188, 0.15, 0.2,  colors.green2),
+        createBlob(canvas.width * 0.5,  canvas.height * 0.7,  210, 0.18, 0.12, colors.green3),
+        createBlob(canvas.width * 0.15, canvas.height * 0.8,  135, 0.22, 0.18, colors.accent),
+        createBlob(canvas.width * 0.85, canvas.height * 0.65, 165, 0.12, 0.25, colors.green4),
       ];
 
-      // Reinitialize particles
-      particlesRef.current = Array.from({ length: 50 }, () => createParticle(canvas));
+      particlesRef.current = Array.from({ length: 20 }, () => createParticle(canvas));
     };
 
     resize();
     window.addEventListener('resize', resize);
 
-    const drawWave3D = (
+    const drawWave = (
       yOffset: number,
       amplitude: number,
       frequency: number,
@@ -217,14 +194,13 @@ export const WaveCanvas: React.FC = () => {
       phase: number = 0
     ) => {
       const time = timeRef.current;
+      // Step every 4px instead of 2px — half the points
       const points: { x: number; y: number }[] = [];
-
-      for (let x = -20; x <= canvas.width + 20; x += 2) {
+      for (let x = -10; x <= canvas.width + 10; x += 4) {
         const y =
           yOffset +
           Math.sin(x * frequency + time * speed + phase) * amplitude +
-          Math.sin(x * frequency * 0.5 + time * speed * 0.7 + phase) * (amplitude * 0.5) +
-          Math.sin(x * frequency * 1.5 + time * speed * 1.3 + phase) * (amplitude * 0.25);
+          Math.sin(x * frequency * 0.5 + time * speed * 0.7 + phase) * (amplitude * 0.5);
         points.push({ x, y });
       }
 
@@ -235,100 +211,69 @@ export const WaveCanvas: React.FC = () => {
       const b = rgbaMatch[2];
       const a = parseFloat(rgbaMatch[3]);
 
-      const drawSmoothCurve = (pts: { x: number; y: number }[], yOff: number = 0) => {
+      const drawCurve = (pts: { x: number; y: number }[]) => {
         if (pts.length < 2) return;
         ctx.beginPath();
-        ctx.moveTo(pts[0].x, pts[0].y + yOff);
+        ctx.moveTo(pts[0].x, pts[0].y);
         for (let i = 0; i < pts.length - 1; i++) {
           const xMid = (pts[i].x + pts[i + 1].x) / 2;
           const yMid = (pts[i].y + pts[i + 1].y) / 2;
-          ctx.quadraticCurveTo(pts[i].x, pts[i].y + yOff, xMid, yMid + yOff);
+          ctx.quadraticCurveTo(pts[i].x, pts[i].y, xMid, yMid);
         }
         const last = pts[pts.length - 1];
-        ctx.lineTo(last.x, last.y + yOff);
+        ctx.lineTo(last.x, last.y);
       };
 
-      // Shadow layer
-      ctx.save();
-      ctx.globalCompositeOperation = 'multiply';
-      ctx.filter = 'blur(8px)';
-      drawSmoothCurve(points, 20);
-      ctx.lineTo(canvas.width + 20, canvas.height + 20);
-      ctx.lineTo(-20, canvas.height + 20);
-      ctx.closePath();
-      ctx.fillStyle = `rgba(0, 20, 0, ${a * 0.25})`;
-      ctx.fill();
-      ctx.filter = 'none';
-      ctx.restore();
-
-      // Main wave with gradient
+      // Main wave fill — no blur, single pass
       const waveGradient = ctx.createLinearGradient(0, yOffset - amplitude, 0, canvas.height);
       waveGradient.addColorStop(
         0,
         `rgba(${Math.min(255, parseInt(r) + 40)}, ${Math.min(255, parseInt(g) + 30)}, ${Math.min(255, parseInt(b) + 20)}, ${a * 1.2})`
       );
-      waveGradient.addColorStop(0.3, color);
-      waveGradient.addColorStop(
-        0.7,
-        `rgba(${parseInt(r) * 0.6}, ${parseInt(g) * 0.6}, ${parseInt(b) * 0.6}, ${a * 0.7})`
-      );
+      waveGradient.addColorStop(0.4, color);
       waveGradient.addColorStop(
         1,
-        `rgba(${parseInt(r) * 0.3}, ${parseInt(g) * 0.3}, ${parseInt(b) * 0.3}, ${a * 0.3})`
+        `rgba(${Math.floor(parseInt(r) * 0.3)}, ${Math.floor(parseInt(g) * 0.3)}, ${Math.floor(parseInt(b) * 0.3)}, ${a * 0.3})`
       );
 
       ctx.save();
       ctx.globalCompositeOperation = 'screen';
-      drawSmoothCurve(points);
-      ctx.lineTo(canvas.width + 20, canvas.height + 20);
-      ctx.lineTo(-20, canvas.height + 20);
+      drawCurve(points);
+      ctx.lineTo(canvas.width + 10, canvas.height + 10);
+      ctx.lineTo(-10, canvas.height + 10);
       ctx.closePath();
       ctx.fillStyle = waveGradient;
       ctx.fill();
       ctx.restore();
 
-      // Highlight edge
+      // Thin highlight stroke — no blur
       ctx.save();
       ctx.globalCompositeOperation = 'screen';
-      ctx.filter = 'blur(2px)';
-      ctx.strokeStyle = `rgba(${Math.min(255, parseInt(r) + 100)}, ${Math.min(255, parseInt(g) + 80)}, ${Math.min(255, parseInt(b) + 60)}, ${a * 0.5})`;
-      ctx.lineWidth = 3;
+      ctx.strokeStyle = `rgba(${Math.min(255, parseInt(r) + 100)}, ${Math.min(255, parseInt(g) + 80)}, ${Math.min(255, parseInt(b) + 60)}, ${a * 0.4})`;
+      ctx.lineWidth = 1.5;
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
-      drawSmoothCurve(points);
+      drawCurve(points);
       ctx.stroke();
-      ctx.filter = 'none';
-      ctx.restore();
-
-      // Extra glow
-      ctx.save();
-      ctx.globalCompositeOperation = 'screen';
-      ctx.filter = 'blur(6px)';
-      ctx.strokeStyle = `rgba(${Math.min(255, parseInt(r) + 60)}, ${Math.min(255, parseInt(g) + 50)}, ${Math.min(255, parseInt(b) + 40)}, ${a * 0.3})`;
-      ctx.lineWidth = 8;
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
-      drawSmoothCurve(points);
-      ctx.stroke();
-      ctx.filter = 'none';
       ctx.restore();
     };
 
     const isVisible = { current: true };
 
-    const animate = () => {
-      if (!isVisible.current) {
-        animationRef.current = undefined;
-        return;
-      }
-      // Background gradient
+    const animate = (timestamp: number) => {
+      animationRef.current = requestAnimationFrame(animate);
+
+      if (!isVisible.current) return;
+
+      // Cap to TARGET_FPS
+      const elapsed = timestamp - lastFrameRef.current;
+      if (elapsed < FRAME_INTERVAL) return;
+      lastFrameRef.current = timestamp - (elapsed % FRAME_INTERVAL);
+
+      // Background
       const bgGradient = ctx.createRadialGradient(
-        canvas.width * 0.5,
-        canvas.height * 0.5,
-        0,
-        canvas.width * 0.5,
-        canvas.height * 0.5,
-        canvas.width * 0.8
+        canvas.width * 0.5, canvas.height * 0.5, 0,
+        canvas.width * 0.5, canvas.height * 0.5, canvas.width * 0.8
       );
       bgGradient.addColorStop(0, '#0f1a12');
       bgGradient.addColorStop(0.5, '#0d1117');
@@ -336,38 +281,29 @@ export const WaveCanvas: React.FC = () => {
       ctx.fillStyle = bgGradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Update and draw blobs
+      // Blobs
       blobsRef.current.forEach((blob) => {
         blob.update(timeRef.current, canvas);
         blob.draw(ctx);
       });
 
-      // Draw waves
-      drawWave3D(canvas.height * 0.55, 50, 0.002, 0.6, colors.shadow, 0);
-      drawWave3D(canvas.height * 0.6, 45, 0.0025, 0.7, colors.green3, Math.PI * 0.3);
-      drawWave3D(canvas.height * 0.65, 40, 0.003, 0.8, colors.green2, Math.PI * 0.6);
-      drawWave3D(canvas.height * 0.7, 35, 0.0035, 0.9, colors.green1, Math.PI * 0.9);
-      drawWave3D(canvas.height * 0.75, 30, 0.004, 1.0, colors.accent, Math.PI * 1.2);
-      drawWave3D(canvas.height * 0.8, 25, 0.0045, 1.1, colors.highlight, Math.PI * 1.5);
+      // 5 waves — no blur, single pass each
+      drawWave(canvas.height * 0.60, 25, 0.002,  0.6, colors.green3,    0);
+      drawWave(canvas.height * 0.65, 22, 0.0025, 0.7, colors.green2,    Math.PI * 0.4);
+      drawWave(canvas.height * 0.70, 20, 0.003,  0.8, colors.green1,    Math.PI * 0.8);
+      drawWave(canvas.height * 0.75, 17, 0.0035, 0.9, colors.accent,    Math.PI * 1.2);
+      drawWave(canvas.height * 0.80, 14, 0.004,  1.0, colors.highlight, Math.PI * 1.6);
 
-      // Top subtle waves
-      drawWave3D(canvas.height * 0.12, 25, 0.0015, 0.4, 'rgba(124, 179, 66, 0.15)', Math.PI);
-      drawWave3D(canvas.height * 0.18, 20, 0.002, 0.5, 'rgba(85, 139, 47, 0.12)', Math.PI * 0.5);
-
-      // Update and draw particles
-      particlesRef.current.forEach((particle) => {
-        particle.update(canvas);
-        particle.draw(ctx);
+      // Particles
+      particlesRef.current.forEach((p) => {
+        p.update(canvas);
+        p.draw(ctx);
       });
 
-      // Vignette effect
+      // Vignette
       const vignette = ctx.createRadialGradient(
-        canvas.width * 0.5,
-        canvas.height * 0.5,
-        canvas.height * 0.3,
-        canvas.width * 0.5,
-        canvas.height * 0.5,
-        canvas.width * 0.9
+        canvas.width * 0.5, canvas.height * 0.5, canvas.height * 0.3,
+        canvas.width * 0.5, canvas.height * 0.5, canvas.width * 0.9
       );
       vignette.addColorStop(0, 'transparent');
       vignette.addColorStop(1, 'rgba(0, 0, 0, 0.4)');
@@ -375,21 +311,17 @@ export const WaveCanvas: React.FC = () => {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       timeRef.current += 0.012;
-      animationRef.current = requestAnimationFrame(animate);
     };
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         isVisible.current = entry.isIntersecting;
-        if (isVisible.current && !animationRef.current) {
-          animate();
-        }
       },
       { threshold: 0 }
     );
     observer.observe(canvas);
 
-    animate();
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener('resize', resize);
