@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import { FeatureCarousel } from '../components/ui/FeatureCarousel';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -39,79 +39,7 @@ export const Paylt: React.FC = () => {
   const t = payltTranslations[language];
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
-  const REBUILT_SLIDE_COUNT = 6;
-  const [rebuiltSlide, setRebuiltSlide] = useState(0);
-  const rebuiltSlideRef = useRef(0);
-  const carouselWrapperRef = useRef<HTMLDivElement>(null);
-
-  const goToSlide = useCallback((i: number) => {
-    rebuiltSlideRef.current = i;
-    setRebuiltSlide(i);
-  }, []);
-
-  useEffect(() => {
-    let wheelLocked = false;
-    let touchStartY = 0;
-
-    const isCarouselActive = () => {
-      const el = carouselWrapperRef.current;
-      if (!el) return false;
-      const rect = el.getBoundingClientRect();
-      return rect.top < window.innerHeight * 0.6 && rect.bottom > window.innerHeight * 0.4;
-    };
-
-    const handleWheel = (e: WheelEvent) => {
-      if (!isCarouselActive()) return;
-      const cur = rebuiltSlideRef.current;
-      const goingDown = e.deltaY > 0;
-      if (goingDown && cur < REBUILT_SLIDE_COUNT - 1) {
-        e.preventDefault();
-        if (!wheelLocked) {
-          wheelLocked = true;
-          goToSlide(cur + 1);
-          setTimeout(() => { wheelLocked = false; }, 700);
-        }
-      } else if (!goingDown && cur > 0) {
-        e.preventDefault();
-        if (!wheelLocked) {
-          wheelLocked = true;
-          goToSlide(cur - 1);
-          setTimeout(() => { wheelLocked = false; }, 700);
-        }
-      }
-    };
-
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartY = e.touches[0].clientY;
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!isCarouselActive()) return;
-      const delta = touchStartY - e.touches[0].clientY;
-      if (Math.abs(delta) < 50) return;
-      const cur = rebuiltSlideRef.current;
-      if (delta > 0 && cur < REBUILT_SLIDE_COUNT - 1) {
-        e.preventDefault();
-        goToSlide(cur + 1);
-        touchStartY = e.touches[0].clientY;
-      } else if (delta < 0 && cur > 0) {
-        e.preventDefault();
-        goToSlide(cur - 1);
-        touchStartY = e.touches[0].clientY;
-      }
-    };
-
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    window.addEventListener('touchstart', handleTouchStart, { passive: true });
-    window.addEventListener('touchmove', handleTouchMove, { passive: false });
-    return () => {
-      window.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchmove', handleTouchMove);
-    };
-  }, [goToSlide]);
-
-  const closeVideoModal = () => {
+const closeVideoModal = () => {
     setIsVideoModalOpen(false);
   };
 
@@ -306,9 +234,9 @@ export const Paylt: React.FC = () => {
 
           {/* Mobile/Tablet Carousel — hidden on desktop via CSS */}
           <AnimateOnScroll animation="fadeBlur" delay={200} duration={1}>
-            <div className="paylt__rebuilt-carousel-wrapper" ref={carouselWrapperRef}>
+            <div className="paylt__rebuilt-carousel-wrapper">
               <div className="paylt__rebuilt-badge">Como Funciona</div>
-              <MobileCarousel mobileBreakpoint={1024} currentIndex={rebuiltSlide} onIndexChange={goToSlide}>
+              <MobileCarousel mobileBreakpoint={1024}>
 
                 {/* Slide 1: ACCESS c/restritor — indiferenciados */}
                 <div className="paylt__rebuilt-slide">
