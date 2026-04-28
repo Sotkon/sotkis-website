@@ -19,7 +19,7 @@ import hardDrsImg from '../assets/Hardware_sensoresDeteção.webp';
 import techPolicyImg from '../assets/Software_PLAYT.webp';
 import benefitMunicipioImg from '../assets/summer.webp';
 import benefitCidadaoImg from '../assets/Cidadão_Beneficios.webp';
-import { CTASection } from '../components/common/CTASection';
+
 import './Paylt.css';
 
 export const Paylt: React.FC = () => {
@@ -180,8 +180,6 @@ export const Paylt: React.FC = () => {
           variant="full-background"
         />
       </section>
-
-      <CTASection />
 
       {/* Video Modal */}
       {isVideoModalOpen && (
