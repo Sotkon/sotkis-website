@@ -21,7 +21,7 @@ import moduloDRS from '../assets/ModuloSotkisDRS.webp';
 import moduloSotcare from '../assets/ModuloSotcare.webp';
 import moduloPlayt from '../assets/ModuloSotkisPLAYT.webp';
 import moduloRoutes from '../assets/ModuloSotkisRoutes.webp';
-import { CTASection } from '../components/common/CTASection';
+
 import './Platform.css';
 import './Home.css';
 
@@ -532,8 +532,6 @@ export const Platform: React.FC = () => {
           </div>
         </div>
       )}
-
-      <CTASection />
 
     </div>
   );
