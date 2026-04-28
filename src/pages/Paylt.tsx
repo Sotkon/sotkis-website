@@ -6,8 +6,17 @@ import { payltTranslations } from '../translations/paylt';
 import payltHeroImage from '../assets/SFS06471-copy.webp';
 
 import logoPlayt from '../assets/logo-playtW.png';
-import playtCompleto from '../assets/playt_competo.webp';
-import playtCompletoEn from '../assets/Software_PLAYT_EN.webp';
+
+import rebuiltIconBilling from '../assets/rebuilt-icon-0.webp';
+import rebuiltIconMarketplace from '../assets/rebuilt-icon-1.webp';
+import rebuiltIconTrophy from '../assets/rebuilt-icon-2.webp';
+import rebuiltIconAccessRestritor from '../assets/rebuilt-icon-4.webp';
+import rebuiltIconDrs1 from '../assets/rebuilt-icon-5.webp';
+import rebuiltIconDrs2 from '../assets/rebuilt-icon-6.webp';
+import rebuiltIconAccess2 from '../assets/rebuilt-icon-7.webp';
+import rebuiltIconAccess3 from '../assets/rebuilt-icon-8.webp';
+import playtContentores from '../assets/playt-contentores.webp';
+import playtConectar from '../assets/playt-conectar.webp';
 
 import softDashImg from '../assets/Software_DashboardsInterativos.mp4';
 import softAppImg from '../assets/Software_AplicaçãoCidadão.webp';
@@ -133,18 +142,91 @@ export const Paylt: React.FC = () => {
       </section>
 
 
-      {/* Como Funciona Section */}
-      <section className="paylt__how-it-works-section section">
+      {/* Como Funciona Section — Rebuilt */}
+      <section className="paylt__how-it-works-section paylt__how-it-works-section--rebuilt section">
         <div className="container">
           <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
             <h2 className="paylt__section-title">Uma solução para todo o tipo de contentores!</h2>
           </AnimateOnScroll>
           <AnimateOnScroll animation="fadeBlur" delay={200} duration={1}>
-            <img
-              src={language === 'pt' ? playtCompleto : playtCompletoEn}
-              alt="P(L)AYT Como Funciona"
-              className="paylt__how-it-works-image"
-            />
+            <div className="paylt__rebuilt">
+              <div className="paylt__rebuilt-badge">Como Funciona</div>
+              <div className="paylt__rebuilt-header">
+                <div className="paylt__rebuilt-header-col">
+                  <div className="paylt__rebuilt-header-icon"><img src={rebuiltIconBilling} alt="" /></div>
+                  <div className="paylt__rebuilt-header-text">
+                    <strong>Faturação por deposição</strong>
+                    <span>de resíduos indiferenciados</span>
+                  </div>
+                </div>
+                <div className="paylt__rebuilt-header-col">
+                  <div className="paylt__rebuilt-header-icon"><img src={rebuiltIconMarketplace} alt="" /></div>
+                  <div className="paylt__rebuilt-header-text">
+                    <strong>Trocar pontos em compras marketplace</strong>
+                  </div>
+                </div>
+              </div>
+              <div className="paylt__rebuilt-pills">
+                <div className="paylt__rebuilt-pill-wrap">
+                  <div className="paylt__rebuilt-pill">1 ABERTURA = REGISTO</div>
+                </div>
+                <div className="paylt__rebuilt-pill-wrap">
+                  <img src={rebuiltIconTrophy} alt="" className="paylt__rebuilt-trophy" aria-hidden="true" />
+                  <div className="paylt__rebuilt-pill">1 EMBALAGEM = 1 PONTO</div>
+                </div>
+                <div className="paylt__rebuilt-pill-wrap">
+                  <img src={rebuiltIconTrophy} alt="" className="paylt__rebuilt-trophy" aria-hidden="true" />
+                  <div className="paylt__rebuilt-pill">1 ABERTURA = 1 PONTO</div>
+                </div>
+              </div>
+              <div className="paylt__rebuilt-details">
+                <div className="paylt__rebuilt-detail">
+                  <p><strong>Restrição de volume</strong></p>
+                  <p className="paylt__rebuilt-detail-sub">(30 a 100 Litros)</p>
+                </div>
+                <div className="paylt__rebuilt-detail">
+                  <p><strong>Pontos</strong> por deposição individual de embalagens <strong>de vidro</strong></p>
+                </div>
+                <div className="paylt__rebuilt-detail">
+                  <p><strong>Pontos</strong> por deposição individual de embalagens de <strong>plástico e metal</strong></p>
+                </div>
+                <div className="paylt__rebuilt-detail">
+                  <p><strong>Pontos</strong> por abertura para depósito de <strong>papel e cartão</strong></p>
+                </div>
+                <div className="paylt__rebuilt-detail">
+                  <p><strong>Pontos</strong> por abertura para depósito de <strong>resíduos orgânicos</strong></p>
+                </div>
+              </div>
+              <div className="paylt__rebuilt-icons">
+                <div className="paylt__rebuilt-icon-col">
+                  <div className="paylt__rebuilt-icon"><img src={rebuiltIconAccessRestritor} alt="" /></div>
+                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>ACCESS</strong></p>
+                  <p className="paylt__rebuilt-icon-sub">c/restritor de volume</p>
+                </div>
+                <div className="paylt__rebuilt-icon-col">
+                  <div className="paylt__rebuilt-icon"><img src={rebuiltIconDrs1} alt="" /></div>
+                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>DRS</strong></p>
+                </div>
+                <div className="paylt__rebuilt-icon-col">
+                  <div className="paylt__rebuilt-icon"><img src={rebuiltIconDrs2} alt="" /></div>
+                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>DRS</strong></p>
+                </div>
+                <div className="paylt__rebuilt-icon-col">
+                  <div className="paylt__rebuilt-icon"><img src={rebuiltIconAccess2} alt="" /></div>
+                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>ACCESS</strong></p>
+                </div>
+                <div className="paylt__rebuilt-icon-col">
+                  <div className="paylt__rebuilt-icon"><img src={rebuiltIconAccess3} alt="" /></div>
+                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>ACCESS</strong></p>
+                </div>
+                <div className="paylt__rebuilt-icon-col paylt__rebuilt-icon-col--access-methods">
+                  <img src={playtConectar} alt="Identificação RFID e Bluetooth" className="paylt__rebuilt-conectar" />
+                </div>
+              </div>
+              <div className="paylt__rebuilt-containers">
+                <img src={playtContentores} alt="Contentores P(L)AYT" />
+              </div>
+            </div>
           </AnimateOnScroll>
         </div>
       </section>
