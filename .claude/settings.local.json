@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:miguelmalungo.github.io)",
+      "WebFetch(domain:localhost)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s \"https://miguelmalungo.github.io/sotkissite/home\")",
+      "Bash(grep -v \"^\\\\\"\\\\\"$\")",
+      "Bash(curl -s \"https://miguelmalungo.github.io/sotkissite/\")",
+      "Bash(curl -s \"https://miguelmalungo.github.io/sotkissite/assets/index-BOJsj-LM.js\")",
+      "Bash(grep -oP '\"\\(O futuro|The future|hero|Hardware|Software|Level|Access|DRS|Trash4Good|P\\\\\\(L\\\\\\)|PAYT|t4g|paylt|riseAbove|hardwareIntro\\)[^\"]{0,300}\"')",
+      "Bash(grep -oE '\"\\(O futuro|The future|Hardware|Software|Level|Access|DRS|Trash4Good|PAYT|riseAbove|hardwareIntro|paylt|t4g\\)[^\"]{0,200}\"')",
+      "Bash(grep -oE 'title:\"[^\"]{5,100}\"')",
+      "Bash(grep -oE 'hero:\\\\{[^}]{0,500}\\\\}')",
+      "Bash(grep -oE '\"O futuro[^\"]{0,200}\"')",
+      "Bash(grep -oE 'homeTranslations[^;]{0,2000}')",
+      "Bash(grep -oE '\"\\(Crie cidades|Transforme|futuro|reciclagem|A Sotkon|A Trash4Good|APP DE CIDAD|P\\\\\\(L\\\\\\)AYT|Todas as soluções|PAYT\\)[^\"]{0,300}\"')",
+      "Bash(grep -oE 'APP DE[^\"]{0,100}')",
+      "Bash(grep -E \"^[A-ZÁÉÍÓÚ][^{}<>]{20,150}[.!?]$\")",
+      "Bash(grep -E \"[A-ZÁÉÍÓÚ][a-záéíóú ]{30,}\")",
+      "Bash(python3 -c \" import sys, re content = sys.stdin.read\\(\\) strings = re.findall\\(r'\\\\\"\\([^\\\\\"]{30,300}\\)\\\\\"', content\\) for s in strings: print\\(repr\\(s[:200]\\)\\) \")"
+    ]
+  }
+}
