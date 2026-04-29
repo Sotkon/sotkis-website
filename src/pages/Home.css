@@ -376,6 +376,65 @@
   font-size: calc(var(--font-size-base) - 3px);
 }
 
+/* Intro + Selo Section */
+.home__intro-section {
+  background-color: #F1FFF7;
+  padding: 5rem 0;
+}
+
+.home__intro-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.home__intro-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  color: var(--color-primary-dark);
+  margin: 0 0 1.25rem 0;
+}
+
+.home__intro-highlight {
+  display: inline;
+  background: linear-gradient(135deg, #1a3d0a, #4a7c20);
+  color: #ffffff;
+  padding: 0.05em 0.35em;
+  border-radius: 0.3em;
+}
+
+.home__intro-text {
+  flex: 1;
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  line-height: 1.75;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.home__intro-selo {
+  align-self: stretch;
+  height: 100%;
+  width: auto;
+  max-width: clamp(128px, 14.4vw, 208px);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .home__intro-section {
+    padding: 3rem 0;
+  }
+  .home__intro-container {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  .home__intro-selo {
+    width: clamp(130px, 45vw, 200px);
+  }
+}
+
 /* Logo Section */
 .home__logo-section {
   padding-top: calc(var(--spacing-xl) * 3);
@@ -1013,7 +1072,7 @@
 /* Cards Grid Section */
 .home__cards-section {
   background-color: #F1FFF7;
-  padding: 6.4rem 0 6.4rem 0;
+  padding: 3rem 0 6.4rem 0;
 }
 
 .home__cards-section .container {

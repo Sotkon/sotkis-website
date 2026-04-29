@@ -20,6 +20,7 @@ import heroBgImageMobile from '../assets/DSC09612 copy.jpeg';
 import capaAssetImage from '../assets/capa-asset-1.webp';
 import logoPlayt from '../assets/logo-playt.webp';
 import iphoneMockupImage from '../assets/iPhone-Hand-Mockup.webp';
+import seloImage from '../assets/selo.webp';
 
 import './Home.css';
 
@@ -182,6 +183,19 @@ export const Home: React.FC = () => {
           )}
           <img src={capaAssetImage} alt="SOTKIS" className="home__hero-capa-image home__hero-animate home__hero-animate--capa" />
           <img src={iphoneMockupImage} alt="" className="home__hero-iphone-mockup home__hero-animate home__hero-animate--iphone" loading="lazy" />
+        </div>
+      </section>
+
+      {/* Intro + Selo Section */}
+      <section className="home__intro-section">
+        <div className="container home__intro-container">
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="home__intro-title" dangerouslySetInnerHTML={{ __html: (t as any).intro.title }} />
+            <p className="home__intro-text">{(t as any).intro.description}</p>
+          </AnimateOnScroll>
+          <AnimateOnScroll animation="fadeIn" delay={200} duration={0.8}>
+            <img src={seloImage} alt="Uma solução para todo o tipo de contentores" className="home__intro-selo" />
+          </AnimateOnScroll>
         </div>
       </section>
 
