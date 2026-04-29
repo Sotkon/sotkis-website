@@ -18,6 +18,8 @@ import playtContentores from '../assets/playt-contentores.webp';
 import playtConectar from '../assets/playt-conectar.webp';
 import { MobileCarousel } from '../components/ui/MobileCarousel';
 import bgAccessIndiferenciados from '../assets/Extend_the_background_202604241609.jpeg';
+import bgDrsVidroPlastico from '../assets/Extend_the_background_202604241611.jpeg';
+import bgPapelOrganicos from '../assets/Extend_the_background_202604241613.jpeg';
 
 import softDashImg from '../assets/Software_DashboardsInterativos.mp4';
 import softAppImg from '../assets/Software_AplicaçãoCidadão.webp';
@@ -274,8 +276,10 @@ const closeVideoModal = () => {
                       </div>
                     </div>
                     <div className="paylt__rebuilt-slide-pill-wrap">
-                      <img src={REBUILT_TROPHY_SRC} className="paylt__rebuilt-slide-trophy" alt="" aria-hidden="true" />
-                      <div className="paylt__rebuilt-pill">1 EMBALAGEM = 1 PONTO</div>
+                      <div className="paylt__rebuilt-pill-badged">
+                        <img src={REBUILT_TROPHY_SRC} className="paylt__rebuilt-slide-trophy--corner" alt="" aria-hidden="true" />
+                        <div className="paylt__rebuilt-pill">1 EMBALAGEM = 1 PONTO</div>
+                      </div>
                     </div>
                     <div className="paylt__rebuilt-slide-detail">
                       <p><strong>Pontos</strong> por deposição individual de embalagens <strong>de vidro</strong></p>
@@ -285,14 +289,23 @@ const closeVideoModal = () => {
                       <p className="paylt__rebuilt-slide-icon-label">SOTKIS <strong>DRS</strong></p>
                     </div>
                   </div>
+                  <img src={bgDrsVidroPlastico} className="paylt__rebuilt-slide-end-img" alt="" aria-hidden="true" />
                 </div>
 
                 {/* Slide 3: DRS plástico e metal */}
                 <div className="paylt__rebuilt-slide">
                   <div className="paylt__rebuilt-slide-content">
+                    <div className="paylt__rebuilt-slide-header">
+                      <div className="paylt__rebuilt-slide-header-icon"><img src={rebuiltIconMarketplace} alt="" /></div>
+                      <div className="paylt__rebuilt-slide-header-text">
+                        <strong>Trocar pontos em compras marketplace</strong>
+                      </div>
+                    </div>
                     <div className="paylt__rebuilt-slide-pill-wrap">
-                      <img src={REBUILT_TROPHY_SRC} className="paylt__rebuilt-slide-trophy" alt="" aria-hidden="true" />
-                      <div className="paylt__rebuilt-pill">1 ABERTURA = 1 PONTO</div>
+                      <div className="paylt__rebuilt-pill-badged">
+                        <img src={REBUILT_TROPHY_SRC} className="paylt__rebuilt-slide-trophy--corner" alt="" aria-hidden="true" />
+                        <div className="paylt__rebuilt-pill">1 EMBALAGEM = 1 PONTO</div>
+                      </div>
                     </div>
                     <div className="paylt__rebuilt-slide-detail">
                       <p><strong>Pontos</strong> por deposição individual de embalagens de <strong>plástico e metal</strong></p>
@@ -302,11 +315,21 @@ const closeVideoModal = () => {
                       <p className="paylt__rebuilt-slide-icon-label">SOTKIS <strong>DRS</strong></p>
                     </div>
                   </div>
+                  <img src={bgDrsVidroPlastico} className="paylt__rebuilt-slide-end-img" alt="" aria-hidden="true" />
                 </div>
 
                 {/* Slide 4: ACCESS papel e cartão */}
                 <div className="paylt__rebuilt-slide">
                   <div className="paylt__rebuilt-slide-content">
+                    <div className="paylt__rebuilt-slide-header">
+                      <div className="paylt__rebuilt-slide-header-icon"><img src={rebuiltIconMarketplace} alt="" /></div>
+                      <div className="paylt__rebuilt-slide-header-text">
+                        <strong>Trocar pontos em compras marketplace</strong>
+                      </div>
+                    </div>
+                    <div className="paylt__rebuilt-slide-pill-wrap">
+                      <div className="paylt__rebuilt-pill">1 ABERTURA = 1 PONTO</div>
+                    </div>
                     <div className="paylt__rebuilt-slide-detail">
                       <p><strong>Pontos</strong> por abertura para depósito de <strong>papel e cartão</strong></p>
                     </div>
@@ -315,11 +338,21 @@ const closeVideoModal = () => {
                       <p className="paylt__rebuilt-slide-icon-label">SOTKIS <strong>ACCESS</strong></p>
                     </div>
                   </div>
+                  <img src={bgPapelOrganicos} className="paylt__rebuilt-slide-end-img" alt="" aria-hidden="true" />
                 </div>
 
                 {/* Slide 5: ACCESS resíduos orgânicos */}
                 <div className="paylt__rebuilt-slide">
                   <div className="paylt__rebuilt-slide-content">
+                    <div className="paylt__rebuilt-slide-header">
+                      <div className="paylt__rebuilt-slide-header-icon"><img src={rebuiltIconMarketplace} alt="" /></div>
+                      <div className="paylt__rebuilt-slide-header-text">
+                        <strong>Trocar pontos em compras marketplace</strong>
+                      </div>
+                    </div>
+                    <div className="paylt__rebuilt-slide-pill-wrap">
+                      <div className="paylt__rebuilt-pill">1 ABERTURA = 1 PONTO</div>
+                    </div>
                     <div className="paylt__rebuilt-slide-detail">
                       <p><strong>Pontos</strong> por abertura para depósito de <strong>resíduos orgânicos</strong></p>
                     </div>
@@ -328,13 +361,7 @@ const closeVideoModal = () => {
                       <p className="paylt__rebuilt-slide-icon-label">SOTKIS <strong>ACCESS</strong></p>
                     </div>
                   </div>
-                </div>
-
-                {/* Slide 6: Métodos de acesso */}
-                <div className="paylt__rebuilt-slide paylt__rebuilt-slide--access-methods">
-                  <div className="paylt__rebuilt-slide-content paylt__rebuilt-slide-content--centered">
-                    <img src={playtConectar} alt="Identificação RFID e Bluetooth" className="paylt__rebuilt-slide-conectar" />
-                  </div>
+                  <img src={bgPapelOrganicos} className="paylt__rebuilt-slide-end-img" alt="" aria-hidden="true" />
                 </div>
 
               </MobileCarousel>
