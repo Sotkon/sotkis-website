@@ -66,6 +66,12 @@
   animation-delay: 1.7s;
 }
 
+.home__hero-animate--iphone {
+  animation-name: heroFadeUp;
+  animation-duration: 1.2s;
+  animation-delay: 1.1s;
+}
+
 .home__section-text+.home__section-text {
   margin-top: var(--spacing-sm);
 }
