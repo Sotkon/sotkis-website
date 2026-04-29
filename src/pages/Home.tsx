@@ -182,9 +182,6 @@ export const Home: React.FC = () => {
           )}
           <img src={capaAssetImage} alt="SOTKIS" className="home__hero-capa-image home__hero-animate home__hero-animate--capa" />
           <img src={iphoneMockupImage} alt="" className="home__hero-iphone-mockup home__hero-animate home__hero-animate--iphone" loading="lazy" />
-          <div className="home__hero-description home__hero-animate home__hero-animate--3">
-            <p dangerouslySetInnerHTML={{ __html: t.hero.description }} />
-          </div>
         </div>
       </section>
 
