@@ -67,7 +67,7 @@
 .level__hero-title {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
-  font-size: calc((((var(--font-size-xl) - 2px) * 2) - 3px) * 0.8);
+  font-size: clamp(1.5rem, 1.3vw + 0.8rem, 1.75rem);
   line-height: 1.1;
   color: #ffffff;
   margin: 0;
@@ -600,8 +600,8 @@
   }
 
   .level__intro {
-    padding: var(--spacing-4xl) 0 var(--spacing-3xl) !important;
-    margin-top: 0 !important;
+    padding: var(--spacing-4xl) 0 var(--spacing-3xl);
+    margin-top: 0;
   }
 
   .level__intro .container {
@@ -637,8 +637,8 @@
   }
 
   .level__sensor-section {
-    padding-top: var(--spacing-2xl);
-    padding-bottom: var(--spacing-2xl);
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
   }
 
   .level__sensor-layout {
@@ -648,6 +648,7 @@
 
   .level__sensor-image-wrapper {
     order: -1;
+    transform: none;
   }
 
   .level__sensor-image {
@@ -700,15 +701,6 @@
 
   .level__stage-slide {
     gap: var(--spacing-md);
-  }
-
-  .level__intro {
-    padding: var(--spacing-3xl) 0 var(--spacing-2xl) !important;
-  }
-
-  .level__sensor-section {
-    padding-top: var(--spacing-xl);
-    padding-bottom: var(--spacing-xl);
   }
 
   .level__stages-section .container {
@@ -782,8 +774,8 @@
   }
 
   .level__intro {
-    padding: var(--spacing-3xl) 0 var(--spacing-2xl) !important;
-    margin-top: 0 !important;
+    padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+    margin-top: 0;
   }
 
   .level__intro-content h2 {
