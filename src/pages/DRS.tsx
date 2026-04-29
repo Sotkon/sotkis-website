@@ -207,8 +207,8 @@ export const DRS: React.FC = () => {
               <iframe
                 width="853"
                 height="480"
-                src="https://www.youtube.com/embed/M0Gr6pVUz4E"
-                title="SOTKON Intelligent Systems - We present Sotkis"
+                src="https://www.youtube.com/embed/JeTtkIFl3uk"
+                title="SOTKIS DRS"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
