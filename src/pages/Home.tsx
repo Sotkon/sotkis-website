@@ -193,7 +193,7 @@ export const Home: React.FC = () => {
             <h2 className="home__intro-title" dangerouslySetInnerHTML={{ __html: (t as any).intro.title }} />
             <p className="home__intro-text">{(t as any).intro.description}</p>
           </AnimateOnScroll>
-          <AnimateOnScroll animation="fadeIn" delay={200} duration={0.8}>
+          <AnimateOnScroll animation="fadeIn" delay={200} duration={0.8} className="home__intro-selo-wrapper">
             <img src={seloImage} alt="Uma solução para todo o tipo de contentores" className="home__intro-selo" />
           </AnimateOnScroll>
         </div>

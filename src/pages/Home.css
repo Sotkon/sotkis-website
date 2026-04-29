@@ -412,13 +412,14 @@
   margin: 0;
 }
 
-.home__intro-selo {
-  align-self: stretch;
-  height: 100%;
-  width: auto;
-  max-width: clamp(128px, 14.4vw, 208px);
-  object-fit: contain;
+.home__intro-selo-wrapper {
   flex-shrink: 0;
+}
+
+.home__intro-selo {
+  width: clamp(140px, 14vw, 240px);
+  height: clamp(140px, 14vw, 240px);
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {
