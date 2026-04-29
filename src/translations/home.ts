@@ -5,6 +5,10 @@ export const homeTranslations = {
       subtitle: "Transforme a gestão de resíduos de sua comunidade!",
       description: "Crie cidades inteligentes e comunidades ambientalmente sustentáveis através dos nossos sistemas inteligentes. O SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT e uma plataforma digital para centralizar informações, otimizar operações municipais e valorizar a experiência dos cidadãos."
     },
+    intro: {
+      title: "Uma solução para todo o tipo de <span class=\"home__intro-highlight\">contentores</span>",
+      description: "Transforme a gestão de resíduos da sua comunidade. Crie cidades inteligentes e comunidades ambientalmente sustentáveis através dos nossos sistemas inteligentes. O SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT e uma plataforma digital para centralizar informações, otimizar operações municipais e valorizar a experiência dos cidadãos."
+    },
     hardwareIntro: "A Sotkon disponibiliza um conjunto de dispositivos inteligentes para colocação na ilha de deposição de resíduos, que permitem a monitorização eficiente dos contentores. É a infraestrutura física que liga os equipamentos à gestão digital.",
     riseAbove: {
       title: "Software",
@@ -46,6 +50,10 @@ export const homeTranslations = {
       title: "The future of<br />recycling",
       subtitle: "Transform your community's waste management!",
       description: "Get ready to create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralise information, optimise municipal operations and enhance the end-user experience."
+    },
+    intro: {
+      title: "A solution for all types of containers",
+      description: "Transform waste management in your community. Create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralise information, optimise municipal operations and enhance the citizen experience."
     },
     hardwareIntro: "Sotkon provides a set of intelligent devices for placement at waste disposal points, enabling efficient monitoring of containers. It is the physical infrastructure that connects the equipment to digital management.",
     riseAbove: {
@@ -89,6 +97,10 @@ export const homeTranslations = {
       subtitle: "¡Transforme la gestión de residuos de su comunidad!",
       description: "Prepárese para crear ciudades inteligentes y comunidades ambientalmente sostenibles a través de nuestros sistemas inteligentes. SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT y una plataforma digital para centralizar información, optimizar operaciones municipales y valorar la experiencia del usuario final."
     },
+    intro: {
+      title: "Una solución para todo tipo de contenedores",
+      description: "Transforme la gestión de residuos de su comunidad. Cree ciudades inteligentes y comunidades ambientalmente sostenibles a través de nuestros sistemas inteligentes. SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT y una plataforma digital para centralizar información, optimizar operaciones municipales y valorar la experiencia de los ciudadanos."
+    },
     hardwareIntro: "Sotkon pone a disposición un conjunto de dispositivos inteligentes para su instalación en los puntos de deposición de residuos, que permiten la monitorización eficiente de los contenedores. Es la infraestructura física que conecta los equipos con la gestión digital.",
     riseAbove: {
       title: "Plataforma Digital",
@@ -130,6 +142,10 @@ export const homeTranslations = {
       title: "L'avenir du<br />recyclage",
       subtitle: "Transformez la gestion des déchets de votre communauté !",
       description: "Préparez-vous à créer des villes intelligentes et des communautés respectueuses de l'environnement grâce à nos systèmes intelligents. SOTKIS (Sotkon Intelligent Systems) intègre des appareils IoT et une plateforme numérique pour centraliser les informations, optimiser les opérations municipales et valoriser l'expérience de l'utilisateur final."
+    },
+    intro: {
+      title: "Une solution pour tous les types de conteneurs",
+      description: "Transformez la gestion des déchets de votre communauté. Créez des villes intelligentes et des communautés respectueuses de l'environnement grâce à nos systèmes intelligents. SOTKIS (Sotkon Intelligent Systems) intègre des appareils IoT et une plateforme numérique pour centraliser les informations, optimiser les opérations municipales et valoriser l'expérience des citoyens."
     },
     hardwareIntro: "Sotkon met à disposition un ensemble de dispositifs intelligents pour installation sur les îlots de déchets, permettant une surveillance efficace des conteneurs. C'est l'infrastructure physique qui relie les équipements à la gestion numérique.",
     riseAbove: {
@@ -173,6 +189,10 @@ export const homeTranslations = {
       subtitle: "Transform your community's waste management!",
       description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralize information, optimize municipal operations and enhance the end-user experience."
     },
+    intro: {
+      title: "A solution for all types of containers",
+      description: "Transform waste management in your community. Create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralise information, optimise municipal operations and enhance the citizen experience."
+    },
     hardwareIntro: "Sotkon provides a set of intelligent devices for placement at waste disposal points, enabling efficient monitoring of containers. It is the physical infrastructure that connects the equipment to digital management.",
     riseAbove: {
       title: "Digital Platform",
@@ -214,6 +234,10 @@ export const homeTranslations = {
       title: "The future of<br />recycling",
       subtitle: "Transform your community's waste management!",
       description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralize information, optimize municipal operations and enhance the end-user experience."
+    },
+    intro: {
+      title: "A solution for all types of containers",
+      description: "Transform waste management in your community. Create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralise information, optimise municipal operations and enhance the citizen experience."
     },
     hardwareIntro: "Sotkon provides a set of intelligent devices for placement at waste disposal points, enabling efficient monitoring of containers. It is the physical infrastructure that connects the equipment to digital management.",
     riseAbove: {
