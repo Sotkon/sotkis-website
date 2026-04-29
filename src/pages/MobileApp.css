@@ -24,11 +24,52 @@
 }
 
 @media (max-width: 768px) {
+  .mobile-app {
+    padding-top: 80px;
+  }
+
+  .mobile-app__hero {
+    padding: 60px var(--container-padding);
+  }
+
   .mobile-app__title {
     font-size: 2rem;
   }
 
   .mobile-app__subtitle {
     font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-app {
+    padding-top: 70px;
+  }
+
+  .mobile-app__hero {
+    padding: 48px var(--container-padding);
+  }
+
+  .mobile-app__title {
+    font-size: 1.75rem;
+  }
+
+  .mobile-app__subtitle {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .mobile-app__hero {
+    padding: 40px var(--container-padding);
+  }
+
+  .mobile-app__title {
+    font-size: 1.5rem;
+  }
+
+  .mobile-app__subtitle {
+    font-size: var(--font-size-sm);
   }
 }
