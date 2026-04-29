@@ -1503,16 +1503,39 @@
 
 @media (max-width: 768px) {
   .paylt__hero-scheme {
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    width: fit-content;
   }
 
   .paylt__hero-scheme-items {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
   }
 
   .paylt__hero-scheme-arrow {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    padding-left: 0;
+    align-self: auto;
+  }
+
+  /* Line SVG is 40×2 — rotating 90° makes it visually 2×40 but
+     layout box stays 40×2. Compensate with margin: (40-2)/2 = 19px */
+  .paylt__hero-scheme-arrow svg:first-child {
     transform: rotate(90deg);
+    margin: 19px -19px;
+  }
+
+  /* Triangle SVG is 10×10 — rotating 90° makes it point downward */
+  .paylt__hero-scheme-arrow svg:last-child {
+    transform: rotate(90deg);
+  }
+
+  .paylt__hero-scheme-logo img {
+    height: 57px;
   }
 }
 
