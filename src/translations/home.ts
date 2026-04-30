@@ -2,7 +2,7 @@ export const homeTranslations = {
   pt: {
     hero: {
       title: "O futuro da<br />reciclagem",
-      subtitle: "Transforme a gestão de resíduos de sua comunidade!",
+      subtitle: "Transforme a gestão de resíduos da sua comunidade!",
       description: "Crie cidades inteligentes e comunidades ambientalmente sustentáveis através dos nossos sistemas inteligentes. O SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT e uma plataforma digital para centralizar informações, otimizar operações municipais e valorizar a experiência dos cidadãos."
     },
     intro: {
