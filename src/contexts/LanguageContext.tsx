@@ -16,8 +16,18 @@ interface LanguageProviderProps {
   children: ReactNode;
 }
 
+const getInitialLanguage = (): Language => {
+  const params = new URLSearchParams(window.location.search);
+  const langParam = params.get('lang');
+  const validLanguages: Language[] = ['pt', 'en', 'es', 'fr', 'gr', 'cr'];
+  if (langParam && validLanguages.includes(langParam as Language)) {
+    return langParam as Language;
+  }
+  return 'pt';
+};
+
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('pt');
+  const [language, setLanguage] = useState<Language>(getInitialLanguage);
 
   const toggleLanguage = useCallback(() => {
     setLanguage((prev) => (prev === 'pt' ? 'en' : 'pt'));
