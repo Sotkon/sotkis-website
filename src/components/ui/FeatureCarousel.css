@@ -594,11 +594,17 @@
   order: 2;
 }
 
-/* Tablet — reduce section height so cover doesn't zoom as aggressively */
+/* Tablet — disable fixed attachment (causes viewport-relative zoom), use scroll instead */
 @media (min-width: 769px) and (max-width: 1023px) {
   .feature-carousel--full-background {
-    min-height: 350px;
+    min-height: 42vw;
     padding: 3rem 0;
+  }
+
+  .feature-carousel--full-background .feature-carousel__background-image {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
   }
 }
 
