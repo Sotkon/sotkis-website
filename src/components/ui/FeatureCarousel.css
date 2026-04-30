@@ -594,16 +594,11 @@
   order: 2;
 }
 
-/* Tablet — prevent background images from zooming/cropping */
+/* Tablet — reduce section height so cover doesn't zoom as aggressively */
 @media (min-width: 769px) and (max-width: 1023px) {
   .feature-carousel--full-background {
-    min-height: 420px;
-    padding: 4rem 0;
-  }
-
-  .feature-carousel__background-image {
-    object-fit: contain;
-    object-position: center;
+    min-height: 350px;
+    padding: 3rem 0;
   }
 }
 
