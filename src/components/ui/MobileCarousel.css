@@ -156,3 +156,10 @@
     display: none;
   }
 }
+
+/* Show arrows on tablet (carousel is visible but arrows were hidden) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .mobile-carousel__arrows {
+    display: flex;
+  }
+}

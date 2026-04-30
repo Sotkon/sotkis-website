@@ -272,6 +272,27 @@
   }
 }
 
+/* Tablet portrait — keep text above decorative images */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .home__hero-capa-image {
+    display: none;
+  }
+  .home__hero-iphone-mockup {
+    display: none;
+  }
+  .home__hero-heading {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 15;
+  }
+  .home__hero-subtitle {
+    max-width: 100%;
+    position: relative;
+    z-index: 15;
+  }
+}
+
 .home__hero-content {
   position: relative;
   z-index: 12;
