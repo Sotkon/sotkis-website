@@ -12,7 +12,7 @@ import heroImage3 from '../assets/3.webp';
 import heroImage4 from '../assets/4.webp';
 import accessSmImage from '../assets/newAccess.webp';
 import levelSmImage from '../assets/LEVEL-SondaREEN2-1.webp';
-import drsSmImage from '../assets/DRSsm.webp';
+import drsSmImage from '../assets/SFS07103.webp';
 import trash4goodsImage from '../assets/trash4goods-pic.webp';
 import payltInfoImage from '../assets/rainbow_homepage.png';
 import heroBgImage from '../assets/DSC09612.jpeg';
