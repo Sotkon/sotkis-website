@@ -594,13 +594,22 @@
   order: 2;
 }
 
-/* Tablet — disable fixed attachment (causes viewport-relative zoom), use scroll instead */
+/* Tablet portrait — proportional height + disable fixed attachment */
 @media (min-width: 769px) and (max-width: 1023px) {
   .feature-carousel--full-background {
     min-height: 42vw;
     padding: 3rem 0;
   }
 
+  .feature-carousel--full-background .feature-carousel__background-image {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Tablet landscape (e.g. iPad Air 1180px) — disable fixed attachment */
+@media (min-width: 1024px) and (max-width: 1199px) {
   .feature-carousel--full-background .feature-carousel__background-image {
     background-attachment: scroll;
     background-size: cover;
