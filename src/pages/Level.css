@@ -600,8 +600,8 @@
   }
 
   .level__intro {
-    padding: var(--spacing-4xl) 0 var(--spacing-3xl);
-    margin-top: 0;
+    padding: var(--spacing-xl) 0 var(--spacing-2xl);
+    margin-top: var(--spacing-md) !important;
   }
 
   .level__intro .container {
@@ -747,10 +747,14 @@
 
 @media (max-width: 480px) {
   .level__hero {
-    min-height: 100vh;
+    min-height: 80vh;
     padding: var(--spacing-2xl) 0;
     padding-top: calc(var(--spacing-3xl) + 50px);
     border-radius: 0 0 1.5rem 1.5rem;
+  }
+
+  .level__hero-image {
+    object-position: center center;
   }
 
   .level__logo-image {
@@ -774,8 +778,8 @@
   }
 
   .level__intro {
-    padding: var(--spacing-3xl) 0 var(--spacing-2xl);
-    margin-top: 0;
+    padding: var(--spacing-lg) 0 var(--spacing-xl);
+    margin-top: var(--spacing-md) !important;
   }
 
   .level__intro-content h2 {
