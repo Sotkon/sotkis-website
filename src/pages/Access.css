@@ -935,6 +935,10 @@
 
 @media (max-width: 768px) {
 
+  .access__hero-image {
+    object-position: 70% center;
+  }
+
   .access__intro {
     padding: var(--spacing-4xl) 0 var(--spacing-3xl) !important;
     margin-top: 0 !important;
