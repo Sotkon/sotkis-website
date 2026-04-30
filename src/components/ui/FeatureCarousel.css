@@ -594,6 +594,19 @@
   order: 2;
 }
 
+/* Tablet — prevent background images from zooming/cropping */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .feature-carousel--full-background {
+    min-height: 420px;
+    padding: 4rem 0;
+  }
+
+  .feature-carousel__background-image {
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   /* Disable parallax on mobile - iOS Safari doesn't support background-attachment: fixed */
