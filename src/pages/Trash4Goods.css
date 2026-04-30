@@ -552,7 +552,7 @@
 }
 
 .trash4goods__app-background {
-    width: 100vw;
+    width: 100%;
     height: auto;
     display: block;
     position: relative;
