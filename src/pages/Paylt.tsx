@@ -15,7 +15,7 @@ import rebuiltIconDrs2 from '../assets/rebuilt-icon-6.webp';
 import rebuiltIconAccess2 from '../assets/rebuilt-icon-7.webp';
 import rebuiltIconAccess3 from '../assets/rebuilt-icon-8.webp';
 import playtContentores from '../assets/playt-contentores.webp';
-import playtConectar from '../assets/playt-conectar.webp';
+
 import { MobileCarousel } from '../components/ui/MobileCarousel';
 import bgAccessIndiferenciados from '../assets/Extend_the_background_202604241609.jpeg';
 import bgDrsVidroPlastico from '../assets/Extend_the_background_202604241611.jpeg';
@@ -184,48 +184,53 @@ const closeVideoModal = () => {
                   <div className="paylt__rebuilt-pill">1 ABERTURA = 1 PONTO</div>
                 </div>
               </div>
-              <div className="paylt__rebuilt-details">
-                <div className="paylt__rebuilt-detail">
-                  <p><strong>Restrição de volume</strong></p>
-                  <p className="paylt__rebuilt-detail-sub">(30 a 100 Litros)</p>
+              <div className="paylt__rebuilt-layout">
+                <div className="paylt__rebuilt-col">
+                  <div className="paylt__rebuilt-detail">
+                    <p><strong>Restrição de volume</strong></p>
+                    <p className="paylt__rebuilt-detail-sub">(30 a 100 Litros)</p>
+                  </div>
+                  <div className="paylt__rebuilt-icon-col">
+                    <div className="paylt__rebuilt-icon"><img src={rebuiltIconAccessRestritor} alt="" /></div>
+                    <p className="paylt__rebuilt-icon-label">SOTKIS <strong>ACCESS</strong></p>
+                    <p className="paylt__rebuilt-icon-sub">c/restritor de volume</p>
+                  </div>
                 </div>
-                <div className="paylt__rebuilt-detail">
-                  <p><strong>Pontos</strong> por deposição individual de embalagens <strong>de vidro</strong></p>
+                <div className="paylt__rebuilt-col">
+                  <div className="paylt__rebuilt-detail">
+                    <p><strong>Pontos</strong> por deposição individual de embalagens <strong>de vidro</strong></p>
+                  </div>
+                  <div className="paylt__rebuilt-icon-col">
+                    <div className="paylt__rebuilt-icon"><img src={rebuiltIconDrs1} alt="" /></div>
+                    <p className="paylt__rebuilt-icon-label">SOTKIS <strong>DRS</strong></p>
+                  </div>
                 </div>
-                <div className="paylt__rebuilt-detail">
-                  <p><strong>Pontos</strong> por deposição individual de embalagens de <strong>plástico e metal</strong></p>
+                <div className="paylt__rebuilt-col">
+                  <div className="paylt__rebuilt-detail">
+                    <p><strong>Pontos</strong> por deposição individual de embalagens de <strong>plástico e metal</strong></p>
+                  </div>
+                  <div className="paylt__rebuilt-icon-col">
+                    <div className="paylt__rebuilt-icon"><img src={rebuiltIconDrs2} alt="" /></div>
+                    <p className="paylt__rebuilt-icon-label">SOTKIS <strong>DRS</strong></p>
+                  </div>
                 </div>
-                <div className="paylt__rebuilt-detail">
-                  <p><strong>Pontos</strong> por abertura para depósito de <strong>papel e cartão</strong></p>
+                <div className="paylt__rebuilt-col">
+                  <div className="paylt__rebuilt-detail">
+                    <p><strong>Pontos</strong> por abertura para depósito de <strong>papel e cartão</strong></p>
+                  </div>
+                  <div className="paylt__rebuilt-icon-col">
+                    <div className="paylt__rebuilt-icon"><img src={rebuiltIconAccess2} alt="" /></div>
+                    <p className="paylt__rebuilt-icon-label">SOTKIS <strong>ACCESS</strong></p>
+                  </div>
                 </div>
-                <div className="paylt__rebuilt-detail">
-                  <p><strong>Pontos</strong> por abertura para depósito de <strong>resíduos orgânicos</strong></p>
-                </div>
-              </div>
-              <div className="paylt__rebuilt-icons">
-                <div className="paylt__rebuilt-icon-col">
-                  <div className="paylt__rebuilt-icon"><img src={rebuiltIconAccessRestritor} alt="" /></div>
-                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>ACCESS</strong></p>
-                  <p className="paylt__rebuilt-icon-sub">c/restritor de volume</p>
-                </div>
-                <div className="paylt__rebuilt-icon-col">
-                  <div className="paylt__rebuilt-icon"><img src={rebuiltIconDrs1} alt="" /></div>
-                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>DRS</strong></p>
-                </div>
-                <div className="paylt__rebuilt-icon-col">
-                  <div className="paylt__rebuilt-icon"><img src={rebuiltIconDrs2} alt="" /></div>
-                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>DRS</strong></p>
-                </div>
-                <div className="paylt__rebuilt-icon-col">
-                  <div className="paylt__rebuilt-icon"><img src={rebuiltIconAccess2} alt="" /></div>
-                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>ACCESS</strong></p>
-                </div>
-                <div className="paylt__rebuilt-icon-col">
-                  <div className="paylt__rebuilt-icon"><img src={rebuiltIconAccess3} alt="" /></div>
-                  <p className="paylt__rebuilt-icon-label">SOTKIS <strong>ACCESS</strong></p>
-                </div>
-                <div className="paylt__rebuilt-icon-col paylt__rebuilt-icon-col--access-methods">
-                  <img src={playtConectar} alt="Identificação RFID e Bluetooth" className="paylt__rebuilt-conectar" />
+                <div className="paylt__rebuilt-col">
+                  <div className="paylt__rebuilt-detail">
+                    <p><strong>Pontos</strong> por abertura para depósito de <strong>resíduos orgânicos</strong></p>
+                  </div>
+                  <div className="paylt__rebuilt-icon-col">
+                    <div className="paylt__rebuilt-icon"><img src={rebuiltIconAccess3} alt="" /></div>
+                    <p className="paylt__rebuilt-icon-label">SOTKIS <strong>ACCESS</strong></p>
+                  </div>
                 </div>
               </div>
               <div className="paylt__rebuilt-containers">

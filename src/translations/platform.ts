@@ -51,11 +51,11 @@ export const platformTranslations = {
       items: [
         {
           title: "Dashboards para controlo da operação",
-          description: "A interface disponibiliza dashboards em tempo real de indicadores-chave, como taxas de reciclagem, poupanças acumuladas e metas ambientais. O sistema analisa a utilização dos equipamentos, com identificação de utilizadores, horários e frequência de deposição, incorporando também alertas e recomendações automáticas."
+          description: "A interface disponibiliza painéis em tempo real para indicadores-chave, tais como taxas de reciclagem, poupanças acumuladas e objetivos ambientais. O sistema analisa a utilização do equipamento — identificando os utilizadores, os horários e a frequência —, ao mesmo tempo que incorpora alertas e recomendações automáticas."
         },
         {
           title: "Gestão de rotas e níveis de enchimento",
-          description: "Estas funcionalidades permitem acompanhar o nível de enchimento dos contentores e planear a recolha com base em dados reais. A plataforma oferece mapas, alertas, históricos e cria rotas adaptativas, otimizando operações, reduzindo custos e evitando recolhas desnecessárias."
+          description: "Estas funcionalidades monitorizam os níveis de enchimento e permitem um planeamento da recolha baseado em dados. Com mapas, alertas e histórico integrados, a plataforma gera percursos adaptativos para otimizar as operações, reduzir custos e evitar recolhas desnecessárias."
         },
         {
           title: "Gestão de manutenções SOTCARE",
