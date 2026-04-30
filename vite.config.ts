@@ -12,6 +12,13 @@ export default defineConfig({
     },
     watch: {
       usePolling: true
+    },
+    proxy: {
+      '/api': {
+        target: 'https://hub.sotkon.org',
+        changeOrigin: true,
+        secure: true,
+      }
     }
   },
   build: {
