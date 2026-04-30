@@ -747,10 +747,14 @@
 
 @media (max-width: 480px) {
   .level__hero {
-    min-height: 100vh;
+    min-height: 80vh;
     padding: var(--spacing-2xl) 0;
     padding-top: calc(var(--spacing-3xl) + 50px);
     border-radius: 0 0 1.5rem 1.5rem;
+  }
+
+  .level__hero-image {
+    object-position: center center;
   }
 
   .level__logo-image {

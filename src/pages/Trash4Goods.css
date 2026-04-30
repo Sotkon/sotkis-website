@@ -628,50 +628,91 @@
 
 @media (max-width: 768px) {
     .trash4goods__app-section {
-        margin-top: 0;
+        display: none;
+    }
+}
+
+/* Mobile-only app section */
+.trash4goods__app-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .trash4goods__app-mobile {
+        display: block;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
     }
 
-    .trash4goods__app-content {
-        transform: translate(-20px, 10px);
-        padding: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl) 0;
-        text-align: left;
-        align-items: flex-start;
-        max-width: 100%;
-    }
-
-    .trash4goods__app-title {
-        font-size: var(--font-size-3xl);
-        margin-top: 40px;
-        white-space: normal;
-    }
-
-    .trash4goods__app-description {
-        font-size: var(--font-size-base);
-    }
-
-    .trash4goods__app-badges {
-        justify-content: flex-start;
-    }
-
-    .trash4goods__app-badge img {
-        height: 42.5px;
-    }
-
-    .trash4goods__app-background {
+    .trash4goods__app-mobile-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100%;
-        min-height: 500px;
+        object-fit: cover;
         object-position: center;
+        z-index: 1;
     }
 
-    .trash4goods__app-overlay {
-        background: transparent !important;
+    .trash4goods__app-mobile-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 2;
     }
 
-    .trash4goods__cta-button {
-        align-self: flex-start;
-        margin-top: 0;
-        display: block !important;
-        visibility: visible !important;
+    .trash4goods__app-mobile-content {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-3xl);
+        gap: var(--spacing-md);
+        color: white;
+    }
+
+    .trash4goods__app-mobile-title {
+        font-size: var(--font-size-3xl);
+        font-weight: var(--font-weight-bold);
+        color: white;
+        margin: 0;
+    }
+
+    .trash4goods__app-mobile-description {
+        font-size: var(--font-size-base);
+        color: rgba(255, 255, 255, 0.9);
+        line-height: var(--line-height-relaxed);
+    }
+
+    .trash4goods__app-mobile-badges {
+        display: flex;
+        gap: var(--spacing-sm);
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .trash4goods__app-mobile-badges .trash4goods__app-badge img {
+        height: 42px;
+    }
+
+    .trash4goods__app-mobile-phone {
+        width: 58%;
+        max-width: 210px;
+        height: auto;
+        display: block;
+        margin: var(--spacing-md) auto;
+        border-radius: 1.5rem;
+        box-shadow: 0 12px 40px #0006;
+        align-self: center;
+    }
+
+    .trash4goods__app-mobile-cta {
+        width: 70%;
+        align-self: center;
     }
 }
 

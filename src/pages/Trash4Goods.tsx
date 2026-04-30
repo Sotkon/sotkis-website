@@ -7,6 +7,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { trash4goodsTranslations } from '../translations/trash4goods';
 import trash4goodsHeroImage from '../assets/SFS06451.webp';
 import appCidadaoImage from '../assets/appcidadao.webp';
+import appMobileBgImage from '../assets/trash4goods_low-DM68MdEs.png';
+import t4gPhoneMockup from '../assets/T4G-homepage-pt-okQtPUBc.webp';
 import appleImage from '../assets/apple.webp';
 import googleImage from '../assets/google.webp';
 import t4gHomepage from '../assets/T4G-homepage-pt.webp';
@@ -167,7 +169,7 @@ export const Trash4Goods: React.FC = () => {
                         alt="SOTKIS mobile app interface"
                         className="trash4goods__app-background"
                     />
-                    <div className="trash4goods__app-overlay">
+                <div className="trash4goods__app-overlay">
                         <div className="trash4goods__app-content">
                             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
                                 <div className="trash4goods__app-badges">
@@ -197,6 +199,28 @@ export const Trash4Goods: React.FC = () => {
                             </AnimateOnScroll>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Mobile-only App Section */}
+            <section className="trash4goods__app-mobile">
+                <img src={appMobileBgImage} alt="" className="trash4goods__app-mobile-bg" />
+                <div className="trash4goods__app-mobile-overlay"></div>
+                <div className="trash4goods__app-mobile-content">
+                    <h2 className="trash4goods__app-mobile-title">TRASH<span style={{ color: '#94C11F' }}>4</span>GOODS</h2>
+                    <p className="trash4goods__app-mobile-description">{t.app.description}</p>
+                    <div className="trash4goods__app-mobile-badges">
+                        <a href="#" className="trash4goods__app-badge">
+                            <img src={appleImage} alt="Download on App Store" />
+                        </a>
+                        <a href="#" className="trash4goods__app-badge">
+                            <img src={googleImage} alt="Get it on Google Play" />
+                        </a>
+                    </div>
+                    <img src={t4gPhoneMockup} alt="Trash4Goods app" className="trash4goods__app-mobile-phone" />
+                    <a href="https://www.trash4goods.com/" className="button button--primary button--sm trash4goods__app-mobile-cta">
+                        {t.app.cta}
+                    </a>
                 </div>
             </section>
 
