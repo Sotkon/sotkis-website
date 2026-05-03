@@ -70,10 +70,10 @@ export const platformTranslations = {
   },
   en: {
     intro: {
-      title: "Sotkis Digital Platform",
-      text1: "SOTKIS (Sotkon Intelligent Systems) is a digital tool that Sotkon provides free of charge, being an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
-      text2: "This platform allows you to manage your container fleet online, where through the various waste management modules it is possible to optimize the efficiency of allocated resources, increase operational profitability, boost recycling rates and improve waste quality.",
-      text3: "The SOTKIS platform enables integrated and intelligent management of all processes related to waste deposition and collection, providing responsible entities with advanced tools to optimize operations and improve environmental sustainability."
+      title: "SOTKIS Digital Platform",
+      text1: "Through an online portal and a mobile app, SOTKIS enables the integrated monitoring and management of data related to waste management, from disposal to collection.",
+      text2: "This platform allows you to manage your container fleet online, where, through various waste management modules, you can optimize the efficiency of allocated resources, increase operational profitability, and improve recycling rates and waste quality.",
+      text3: ""
     },
     features: {
       intro: "Through the existing modules in the SOTKIS platform, the entity responsible for the operation can simply access various functionalities:",
@@ -110,30 +110,30 @@ export const platformTranslations = {
     modulesTitle: "Platform Modules",
     modules: [
       { title: "Level", description: "Intelligent Fill Level Monitoring Solution" },
-      { title: "Access", description: "Smart Access Control System" },
-      { title: "DRS", description: "Deposit Return System Solution" },
-      { title: "Sotcare", description: "Comprehensive Maintenance Management" },
-      { title: "P(L)ayt", description: "Pay-As-You-Throw Management System" },
-      { title: "Routes", description: "Optimized Route Planning System" }
+      { title: "Access", description: "Intelligent Access Control System" },
+      { title: "DRS", description: "Deposit and Return System Solution" },
+      { title: "Sotcare", description: "Container Fleet Maintenance Management" },
+      { title: "Routes", description: "Optimized Route Planning System" },
+      { title: "P(L)AYT", description: "Complete Digital Ecosystem" }
     ],
     funcionalidades: {
       title: "Platform features",
       items: [
         {
-          title: "Operation control dashboards",
-          description: "The interface provides real-time dashboards of key indicators, such as recycling rates, accumulated savings and environmental goals. The system analyses equipment usage, with user identification, schedules and deposit frequency, also incorporating automatic alerts and recommendations."
+          title: "Dashboards for operational monitoring",
+          description: "The interface provides real-time dashboards for key indicators, such as recycling rates, accumulated savings, and environmental goals. The system analyzes equipment usage, identifying users, disposal times, and frequency, while also incorporating automated alerts and recommendations."
         },
         {
-          title: "Route and fill level management",
-          description: "These features allow tracking container fill levels and planning collection based on real data. The platform offers maps, alerts, histories and creates adaptive routes, optimising operations, reducing costs and avoiding unnecessary collections."
+          title: "Route management and fill levels",
+          description: "These functionalities track fill levels and enable data-driven collection planning. With integrated maps, alerts, and history, the platform generates adaptive routes to streamline operations, reduce costs, and avoid redundant pickups."
         },
         {
-          title: "SOTCARE maintenance management",
-          description: "The Sotcare module enables efficient management of the entire container fleet, integrating IoT device alerts and failure prediction algorithms based on historical data. Maintenance history can be consulted, interventions requested and needs anticipated, reducing equipment downtime and improving service quality for citizens."
+          title: "Maintenance management SOTCARE",
+          description: "The Sotcare module enables efficient management of the entire container fleet, integrating alerts from IoT devices and algorithms for predicting failures based on historical data. Users can view maintenance records, request interventions and anticipate needs, thereby reducing equipment downtime and improving the quality of service provided to citizens."
         },
         {
-          title: "Recycling Gamification",
-          description: "Sotkis software, which centralises the intelligence of the P(L)AYT system, tracks selective collection performance through metrics of citizen participation, quality of deposited waste and adherence to incentive programmes. This structured information supports awareness campaigns and environmental goals."
+          title: "Recycling gamification",
+          description: "The SOTKIS software, which serves as the central hub for the P(L)AYT system, tracks the performance of selective waste collection using metrics such as citizen participation, the quality of the waste deposited, and adherence to incentive programs. This structured data supports awareness campaigns and environmental goals."
         }
       ]
     }

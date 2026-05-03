@@ -6,7 +6,7 @@ import './CTASection.css';
 
 const ctaText = {
   pt: { button: 'Fale connosco' },
-  en: { button: 'Talk to us' },
+  en: { button: 'Contact us' },
   es: { button: 'Hable con nosotros' },
   fr: { button: 'Parlez-nous' },
   gr: { button: 'Talk to us' },

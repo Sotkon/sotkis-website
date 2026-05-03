@@ -59,60 +59,60 @@ export const accessTranslations = {
   },
   en: {
     hero: {
-      title: "SOTKIS Access\nAccess Controls for waste disposal",
+      title: "SOTKIS ACCESS:\nAccess controls for waste disposal",
       description: "",
       button: "Play Video"
     },
     intro: {
       title: "SOTKIS ACCESS",
-      text1: "Ecosystem composed of a set of advanced functionalities, aimed at optimizing operational efficiency, supporting municipal decision-making and enhancing the end-user experience.",
-      text2: "SOTKIS ACCESS collects information whenever an access key is used and converts data about who, when and what waste was deposited into valuable information that leads to improved waste quality, increased recycling rates and reduced overall waste management costs. Find out here how your city can benefit from SOTKIS ACCESS."
+      text1: "SOTKIS Access is an intelligent access control module designed for waste disposal points. Access transforms access control data into valuable management insights, allowing users to segment behavior and generate detailed reports by zone, time, and user type.",
+      text2: ""
     },
     carousel: [
       {
-        title: "Deposit Registration",
-        description: "The system records each use, collecting relevant information with each deposit. These records are securely transmitted via the GSM network to the centralised management platform."
+        title: "Record of depositions",
+        description: "The system records each use, collecting relevant information with every disposal. These records are securely transmitted via the GSM network to the centralized management platform."
       },
       {
-        title: "Compatibility with Existing Systems",
-        description: "The SOTKIS access module adapts to different types of containers, ensuring its integration in diverse waste disposal contexts."
+        title: "Compatibility with existing systems",
+        description: "The SOTKIS access module adapts to different types of containers, ensuring its integration into a variety of waste disposal settings."
       },
       {
         title: "Access Technologies",
-        description: "Access controls can be efficiently activated via a Smart Tag (RFID), Smart Card (RFID) or Smartphone (Bluetooth), through the dedicated citizen application, ensuring practicality and security."
+        description: "Access controls can be efficiently activated by using Smart Tags (RFID), Smart Cards (RFID), or smartphones (Bluetooth) via the dedicated citizen app, ensuring convenience and security."
       }
     ],
     compatibility: {
       title: "SOTKIS ACCESS is compatible with the following waste systems:"
     },
     technical: {
-      title: "Technical features",
-      text: "SOTKIS Access integrates an electromechanical lock and an electronic module that includes antennas and batteries. At a predefined time, the system sends deposit session information to the web platform using GSM communication.",
+      title: "Technical Characteristics",
+      text: "",
       lock: {
-        title: "Electromechanical lock",
-        description: "Locks the lid of the waste disposal marker, restricting access to the waste container."
+        title: "Electromechanical Lock",
+        description: "Locks the lid of the intake column, restricting access to the waste container."
       },
       box: {
-        title: "Electronic box",
-        description: "Comprises the main electronic board and includes the RFID reader, batteries, GSM modules and antennas."
+        title: "Electronic Box",
+        description: "Composed of the main electronic board and includes batteries, GSM modules, and antennas."
       },
-      devicesText: "The system supports multiple identification formats to ensure operational flexibility."
+      devicesText: "The system supports multiple identification formats to ensure operational flexibility:"
     },
     restrictor: {
-      title: "SOTKIS ACCESS WITH VOLUME RESTRICTOR",
-      text: "SOTKIS Access, through the installation of a volumetric restrictor on the disposal marker, enables the implementation of the PAYT principle. \"Pay-as-you-throw\" is a system in which residents pay for waste according to the amount they produce, considered to be a fairer payment system. Different volume restrictors are available depending on the disposal marker or container."
+      title: "SOTKIS ACCESS WITH VOLUMETRIC RESTRICTOR",
+      text: "SOTKIS Access enables the implementation of the PAYT principle through the installation of a volumetric restrictor in the intake column. \"Pay-As-You-Throw\" (PAYT) is a system in which residents are charged based on the amount of waste they generate, making it a fairer and more transparent pricing model. A range of volumetric restrictors is available, depending on the type of intake column or container."
     },
     howItWorks: {
       title: "How It Works",
-      tamborDesc: "For its implementation, a double drum applied to the underground, semi-underground or surface container is required, equipped with the SOTKIS access module. The drum, which varies from 30 to 100 litres, restricts the volume of deposits and only authorises one deposit per connection.",
-      alcapaoDesc1: "For underground systems, an interior hatch can also be implemented on the disposal marker, with a volume restrictor, equipped with the SOTKIS access module.",
-      alcapaoDesc2: "Similarly, after opening the Sotkis Access, the 35-litre hatch limits the volume of deposits and only authorises one deposit per connection.",
-      alcapaoDescMobile: "For underground systems, an interior hatch can be implemented on the disposal marker, with a volume restrictor, equipped with the SOTKIS access module. After opening the Sotkis Access, the 35-litre hatch limits deposits and only authorises one per connection.",
+      tamborDesc: "To implement this system, a double drum must be installed in an underground, semi-underground, or surface container equipped with the SOTKIS access module. The drum, which ranges from 30 to 100 liters, limits the volume of waste and allows only one deposit per connection.",
+      alcapaoDesc1: "For underground systems, an interior trapdoor with a volume restrictor can also be installed in the intake column, equipped with the SOTKIS Access module.",
+      alcapaoDesc2: "Likewise, once the SOTKIS Access module is opened, the 35-liter trapdoor limits the volume of waste and allows only one deposit per connection.",
+      alcapaoDescMobile: "For underground systems, an interior trapdoor with a volume restrictor can also be installed in the intake column, equipped with the SOTKIS Access module. Likewise, once the SOTKIS Access module is opened, the 35-liter trapdoor limits the volume of waste and allows only one deposit per connection.",
       step1: "<strong>Connect</strong>",
-      step2Tambor: "<strong>Open, rotate the drum</strong> and deposit on the inner surface of the drum",
-      step3Tambor: "<strong>Rotate the drum and fully close</strong> the system, allowing waste to enter the container",
-      step2Alcapao: "<strong>Open the top lid</strong> and <strong>deposit</strong> on the interior hatch",
-      step3Alcapao: "<strong>Fully close the lid,</strong> allowing waste to enter the container"
+      step2Tambor: "<strong>Open, rotate the drum,</strong> and deposit the bag on the inner surface of the drum",
+      step3Tambor: "<strong>Rotate the drum and close the system completely,</strong> allowing waste to enter the container",
+      step2Alcapao: "<strong>Open the top lid</strong> and place the waste on the inner trapdoor",
+      step3Alcapao: "<strong>Close the lid completely,</strong> allowing the waste to fall into the container"
     }
   },
   es: {

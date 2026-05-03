@@ -73,7 +73,7 @@ export const drsTranslations = {
       button: "Play Video"
     },
     cycle: {
-      title: "How it transforms:",
+      title: "The transformation process:",
       deposicao: "Deposit",
       recolha: "Collection",
       transformacao: "Industrial Transformation",
@@ -82,10 +82,10 @@ export const drsTranslations = {
       reenchimento: "Product Refill"
     },
     content: {
-      title: "Deposit Return System",
-      text1: "To connect to DRS equipment, citizens only need a mobile device for Bluetooth connection or an RFID card. After this connection, the user deposits their glass bottles, plastic packaging and metal cans. The DRS system recognizes all types of packaging materials.",
-      text2: "After this process, the user receives the incentive that their city wants to assign!",
-      text3: "The incentives to be assigned are decided by each municipality and can be \"points\" received after each deposit. These points can then be converted into various benefits for each citizen - discounts on waste fees, public transportation, use of municipal facilities or incentives to participate in city events."
+      title: "Digital Return System",
+      text1: "SOTKIS DRS is a smart solution that helps increase recycling rates and improve the quality of sorted waste. Equipped with technology to identify individual containers (glass, plastic, and metal), the system automatically and reliably records each deposit.",
+      text2: "After making a deposit, the user receives points. These points can then be redeemed in various benefits for each citizen: discounts on waste collection fees, public transportation, use of municipal facilities, or incentives to participate in events.",
+      text3: ""
     },
     carousel: [
       {
@@ -98,15 +98,15 @@ export const drsTranslations = {
       }
     ],
     technical: {
-      title: "Technical features",
+      title: "Technical characteristics",
       text: "SOTKIS DRS integrates a ring with acoustic detection technology and an electronic module including antennas and batteries. Each deposit session is sent to the web platform using GSM communication from the user's mobile phone.",
       box: {
         title: "Electronic Box",
-        description: "Contains the main board, RFID reader, batteries and antennas, supporting integration with barcode reading."
+        description: "Contains the main board, batteries, and antennas, supporting integration with barcode readers."
       },
       ring: {
         title: "Ring",
-        description: "Deposition tube that includes the acoustic technology for detecting deposits."
+        description: "A deposition tube that incorporates acoustic deposition detection technology."
       }
     },
     howItWorks: {
@@ -115,22 +115,22 @@ export const drsTranslations = {
     cards: [
       {
         title: "Ease of integration",
-        description: "The DRS device adapts to different types of containers, ensuring its integration in diverse waste disposal contexts."
+        description: "The DRS device adapts to different types of containers, ensuring its integration into a variety of waste disposal settings."
       },
       {
-        title: "Reading technologies",
-        description: "Citizens can connect via Bluetooth or an RFID card. The device can include a scanner for reading packaging barcodes."
+        title: "Identification Technologies",
+        description: "Users can be identified through a smart card (RFID reading) or a smartphone with Bluetooth. The device may also include a scanner for reading barcodes on packaging."
       },
       {
-        title: "Sound detection",
-        description: "DRS recognizes all types of packaging material in real time, thanks to acoustic technologies combined with Artificial Intelligence algorithms."
+        title: "Acoustic Detection",
+        description: "DRS recognizes all types of packaging materials in real time, thanks to acoustic technologies combined with artificial intelligence algorithms."
       }
     ],
     steps: [
-      { title: "Connect", description: "Connect to the DRS using the Mobile App or Card." },
-      { title: "Deposit", description: "Insert packages into the ring one by one (scan the barcode if the system allows)" },
-      { title: "Score", description: "Receive points automatically for each accepted package." },
-      { title: "Exchange", description: "Exchange your accumulated points for rewards in the marketplace." }
+      { title: "Connect", description: "Connect to the DRS using the mobile app or card." },
+      { title: "Deposit", description: "Insert the packaging/bottles into the ring one by one (scan the barcode if the system allows)." },
+      { title: "Score", description: "Receive points automatically for each accepted packaging/bottle." },
+      { title: "Redeem", description: "Exchange your accumulated points for rewards in the marketplace." }
     ]
   },
   es: {

@@ -49,42 +49,42 @@ export const homeTranslations = {
     hero: {
       title: "The future of<br />recycling",
       subtitle: "Transform your community's waste management!",
-      description: "Get ready to create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralise information, optimise municipal operations and enhance the end-user experience."
+      description: "Create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralize information, optimize municipal operations, and enhance the citizen experience."
     },
     intro: {
-      title: "A solution for all types of containers",
-      description: "Transform waste management in your community. Create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralise information, optimise municipal operations and enhance the citizen experience."
+      title: "Transform your community's waste management!",
+      description: "Create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralize information, optimize municipal operations, and enhance the citizen experience."
     },
-    hardwareIntro: "Sotkon provides a set of intelligent devices for placement at waste disposal points, enabling efficient monitoring of containers. It is the physical infrastructure that connects the equipment to digital management.",
+    hardwareIntro: "Sotkon offers a range of intelligent devices designed for installation at waste collection points, enabling efficient monitoring of waste containers. This physical infrastructure connects the equipment to the digital management system.",
     riseAbove: {
-      title: "Digital Platform",
-      text: "The SOTKIS platform (Sotkon Intelligent Systems) is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection. The portal and app were designed to optimize the efficiency of resources allocated to waste management, increasing the profitability of this operation.",
-      button: "Explore the Platform"
+      title: "Software",
+      text: "The SOTKIS platform, which includes the online portal and the app, consists of an integrated management system that collects and manages information on the processes involved in the disposal and/or collection of waste.",
+      button: "Explore Software"
     },
     access: {
       title: "Access",
-      description: "The SOTKIS ACCESS module features an RFID reader and locks that restrict access to the container. It can be easily installed in an existing system and is the perfect solution for cities wishing to introduce a PAYT waste charging system.",
+      description: "Access controls for waste deposition",
       button: "Explore Access"
     },
     level: {
       title: "Level",
-      description: "Intelligent module that monitors the fill level of waste in containers. Get precise, up-to-date and easily accessible information about the amount of waste in each container, thus optimizing the efficiency of your operations.",
+      description: "Monitoring of container fill levels",
       button: "Explore Level"
     },
     drs: {
       title: "DRS",
-      description: "The \"Digital Return System\" is an innovative technology that individually identifies each selective deposition package and allows the assignment of incentives to users. It is an instrument that drives the increase in recycling rates.",
+      description: "Digital return system",
       button: "Explore DRS"
     },
     paylt: {
       title: "P(L)AYT",
-      description: "Digital solution that transforms waste management by enabling intelligent pricing models and recycling incentive mechanisms. It brings together, involves and empowers citizens in building more circular and environmentally conscious cities.",
-      button: "Explore P(L)ayt"
+      description: "All SOTKIS solutions in a single ecosystem.",
+      button: "Explore P(L)AYT"
     },
     t4g: {
       title: "CITIZEN APP",
-      description: "The T4G App rewards good practices. It brings together citizens and municipal services, encouraging recycling through local benefits that promote economic dynamization.",
-      button: "Explore T4G"
+      description: "Trash4Goods is a mobile app that turns recycling into an engaging and rewarding experience. Through the app, users track their recycling activities and earn rewards for the correct deposition of their waste.",
+      button: "Explore Citizen App"
     },
     app: {
       title: "DOWNLOAD THE SOTKIS APP",

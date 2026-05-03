@@ -80,11 +80,13 @@ export const Access: React.FC = () => {
                 {t.intro.text1}
               </p>
             </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
-              <p>
-                {t.intro.text2}
-              </p>
-            </AnimateOnScroll>
+            {t.intro.text2 && (
+              <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8}>
+                <p>
+                  {t.intro.text2}
+                </p>
+              </AnimateOnScroll>
+            )}
             {(() => {
               const intro = t.intro as { title: string; text1: string; text2: string; text3?: string };
               return intro.text3 ? (
@@ -145,11 +147,13 @@ export const Access: React.FC = () => {
             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
               <h2>{t.technical.title}</h2>
             </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
-              <p>
-                {t.technical.text}
-              </p>
-            </AnimateOnScroll>
+            {t.technical.text && (
+              <AnimateOnScroll animation="fadeSlideUp" delay={150} duration={0.8}>
+                <p>
+                  {t.technical.text}
+                </p>
+              </AnimateOnScroll>
+            )}
             <div className="access__technical-layout">
               <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="access__technical-item">
                 <div>

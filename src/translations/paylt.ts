@@ -96,19 +96,19 @@ export const payltTranslations = {
   },
   en: {
     hero: {
-      title: "Sotkon Waste Systems",
-      subtitle: "Solutions for PAYT waste payment system!"
+      title: "P(L)AYT",
+      subtitle: "All SOTKIS solutions in a single ecosystem."
     },
     intro: {
-      title: "P(L)ayt",
-      text1: "PAYT is the abbreviation for \"pay-as-you-throw\", a system that provides for residents to pay for waste based on the amount they produce. It is understood as the fairest payment system and should, in the medium term, be applied in all European Union countries.",
-      text2: "A PAYT system quantifies the waste deposited by each user by measuring its weight or volume. Various technologies can be used to identify both users and their deposits, with the aim of applying tariffs or other policies to encourage the Circular Economy.",
-      text3: "SOTKIS PAYT provides the necessary tools to design and implement successful policies that encourage users to manage waste more carefully, with greater separation and improvement of waste quality for treatment and recovery.",
-      text4: "The SOTKIS ACCESS module allows you to control and monitor access to waste containers, ensuring efficient and secure management of the deposition system.",
+      title: "SOTKIS P(L)AYT",
+      text1: "SOTKIS P(L)AYT (Pay Less As You Throw) is an innovative and disruptive solution, designed to be universal and modular, adapting to different municipal realities, container manufacturers, and implementation contexts.",
+      text2: "This solution combines software and hardware into a universal ecosystem, monitoring every stage of the disposal and collection process, enabling the analysis of related habits.",
+      text3: "It is possible to create positive incentives through gamification and rewards, promoting real changes in citizens' behaviors, optimizing public policies, and strengthening collaboration between users, municipalities, and companies.",
+      text4: "",
       text5: ""
     },
     howItWorks: {
-      title: "How it works?",
+      title: "How It Works",
       description: "Sotkis P(L)AYT combines software and hardware in a universal ecosystem, compatible with any type of container and manufacturer. The platform tracks all stages of the deposition and collection process, allowing for habit monitoring. Consequently, it is possible to create positive incentives and adjust public policies efficiently."
     },
     carousel: [
@@ -142,7 +142,7 @@ export const payltTranslations = {
       text: "SOTKIS PAYT is compatible with the following systems:"
     },
     video: {
-      title: "SOTKIS P(L)ayt\nSystem \"Pay Less as you throw\"",
+      title: "SOTKIS P(L)AYT",
       button: "Play Video"
     },
     scheme: {
@@ -158,25 +158,25 @@ export const payltTranslations = {
       openingDetail2: "Points per opening for organic waste deposit"
     },
     contentores: {
-      title: "A solution for all types of containers!"
+      title: "One solution for all types of containers"
     },
     componentesTitle: "Solution Components",
     software: {
-      title: "Smart Software that drives impact",
+      title: "Intelligent Software that makes an impact",
       subtitle: "A dynamic and scalable infrastructure that integrates:",
       features: [
-        { label: "Interactive dashboards", description: "Dashboards and data for resource optimisation and cost reduction" },
-        { label: "Citizen application", description: "Mobile application integrated with hardware and gamification tools" },
+        { label: "Interactive dashboards", description: "Dashboards and insights for resource optimization and cost reduction" },
+        { label: "Citizen app", description: "A mobile app integrated with hardware and gamification tools" },
         { label: "Marketplace", description: "Integrated marketplace with benefits, rewards and digital features" },
         { label: "PAYT", description: "Solutions for transparent implementation of PAYT/RAYT/SAYT models" }
       ]
     },
     hardware: {
-      title: "Advanced Hardware easy to integrate",
-      subtitle: "Smart devices installed in any type of container, including:",
+      title: "Advanced hardware that is easy to integrate",
+      subtitle: "Smart devices that can be installed in any type of container, including:",
       features: [
         { label: "Level sensors", description: "Sensors for detecting container fill levels" },
-        { label: "Access control", description: "Devices for controlling access to containers" },
+        { label: "Access control", description: "Devices for controlling access to waste containers" },
         { label: "Volume restrictors", description: "Volumetric restrictors that enable the implementation of the PAYT principle." },
         { label: "Detection sensors", description: "DRS sensors that record each packaging deposit" }
       ]
@@ -184,8 +184,8 @@ export const payltTranslations = {
     benefits: {
       title: "Benefits for Municipalities and Citizens",
       features: [
-        { label: "MUNICIPALITY", description: "REDUCES landfill rates by increasing separation" },
-        { label: "CITIZEN", description: "SAVES on bills or receives recycling benefits" }
+        { label: "MUNICIPALITY", description: "REDUCES landfill fees by increasing source separation" },
+        { label: "CITIZEN", description: "SAVES on utility bills or receives incentives for recycling" }
       ]
     }
   },
