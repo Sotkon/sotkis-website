@@ -194,7 +194,11 @@ export const Home: React.FC = () => {
             <p className="home__intro-text">{(t as any).intro.description}</p>
           </AnimateOnScroll>
           <AnimateOnScroll animation="fadeIn" delay={200} duration={0.8} className="home__intro-selo-wrapper">
-            <img src={seloImage} alt="Uma solução para todo o tipo de contentores" className="home__intro-selo" />
+            <img
+              src={seloImage}
+              alt={language === 'pt' ? 'Uma solução para todo o tipo de contentores' : 'A solution for all types of containers'}
+              className="home__intro-selo"
+            />
           </AnimateOnScroll>
         </div>
       </section>
@@ -423,7 +427,7 @@ export const Home: React.FC = () => {
                 </>
               ) : (
                 <>
-                  <span className="home__rise-above-text--black">The SOTKIS platform (Sotkon Intelligent Systems)</span> is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection. <span className="home__rise-above-text--black">The portal and app</span> were designed to optimize the efficiency of resources allocated to waste management, increasing the profitability of this operation.
+                  <span className="home__rise-above-text--black">The SOTKIS platform</span>, which includes the online portal and the app, consists of an integrated management system that collects and manages information on the processes involved in the disposal and/or collection of waste.
                 </>
               )}
             </p>
@@ -481,7 +485,9 @@ export const Home: React.FC = () => {
                 <span className="home__scheme-plus">+</span>
                 <div className="home__scheme-pill">Software</div>
                 <span className="home__scheme-plus">+</span>
-                <div className="home__scheme-pill home__scheme-pill--dark">App Cidadão</div>
+                <div className="home__scheme-pill home__scheme-pill--dark">
+                  {language === 'pt' ? 'App Cidadão' : 'Citizen App'}
+                </div>
               </div>
               <div className="home__scheme-arrow">
                 <svg width="40" height="2" viewBox="0 0 40 2" fill="none">

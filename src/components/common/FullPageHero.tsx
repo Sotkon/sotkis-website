@@ -39,7 +39,7 @@ export const FullPageHero: React.FC<FullPageHeroProps> = ({
                 {showButton && (
                   <div className="full-page-hero__cta">
                     <Button href="/contact" variant="primary" size="md">
-                      Enquire now
+                      Contact us
                     </Button>
                   </div>
                 )}
@@ -49,7 +49,7 @@ export const FullPageHero: React.FC<FullPageHeroProps> = ({
         ) : showButton ? (
           <div className="full-page-hero__cta">
             <Button href="/contact" variant="primary" size="md">
-              Enquire now
+              Contact us
             </Button>
           </div>
         ) : null}

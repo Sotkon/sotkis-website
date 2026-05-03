@@ -41,14 +41,15 @@ export const levelTranslations = {
     },
     intro: {
       title: "SOTKIS LEVEL",
-      description: "SOTKIS LEVEL is an efficient and cost-effective solution, allowing resource reallocation and programming essential routes in a strategic, economical and environmentally sustainable way! At its core, this intelligent module aims to monitor the waste fill level in each underground container. This way, unnecessary trips are avoided and it contributes to optimizing routes, saving fuel and reducing costs with teams and equipment."
+      description: "The SOTKIS fill-level management system uses a sensor to provide information on the waste level in the containers. Every smart sensor is installed inside the container, protected from damage, ensuring high resistance and operational durability.",
+      description2: "The system sends data to the web platform, enabling strategic resource allocation, eliminating unnecessary trips, and optimizing routes, thereby ensuring cost-effective and sustainable management."
     },
     sensor: {
-      title: "Ultrasonic Sensor",
-      description: "SOTKIS Level uses an ultrasonic sensor, making the collected information available on the online portal and app. At a predefined time, the system sends the fill level information to the web platform using GSM communication."
+      title: "Technical Characteristics",
+      description: "SOTKIS Level incorporates an ultrasonic or laser sensor and provides the information it collects via the online portal and the app. At a preset time, the system sends the fill level data to the web platform using GSM communication."
     },
     stages: {
-      title: "Main Features"
+      title: "How It Works"
     },
     compatibility: {
       title: "Compatibility:"
@@ -59,13 +60,13 @@ export const levelTranslations = {
       power: { label: "Power supply:", value: "3.6 V lithium battery" },
       protection: { label: "Protection:", value: "IP 69 1K10" },
       material: { label: "Material:", value: "Polyurethane" },
-      workTemp: { label: "Working temperature:", value: "-40 to +80°C" }
+      workTemp: { label: "Operation temperature:", value: "-40 to +80°C" }
     },
     stageItems: [
-      "Sensors monitor fill levels and send data to the server.",
-      "The system calculates the most suitable routes, reducing back-office workload.",
-      "Easy access to data enables collection of statistics and analysis of collection efficiency.",
-      "The collection vehicle driver receives an efficient itinerary for the route with step-by-step navigation."
+      "Sensors monitor the fill levels and send data to the server.",
+      "The system calculates the best optimized routes, reducing backoffice work.",
+      "Easy access to data allows statistics to be gathered and produce a collection efficiency analysis.",
+      "The collection vehicle driver is provided with an efficient itinerary for the route with step-by-step navigation."
     ]
   },
   es: {

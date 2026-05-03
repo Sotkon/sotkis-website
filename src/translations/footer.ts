@@ -39,9 +39,9 @@ export const footerTranslations = {
     },
     newsletter: {
       title: "Subscribe to our Newsletter",
-      placeholder: "Your e-mail",
-      button: "Send",
-      note: "Privacy is important to us, so you have the option of disabling certain types of storage that may not be necessary for the basic functioning of the website. Blocking categories may impact your experience on the website."
+      placeholder: "Your email address",
+      button: "Submit",
+      note: "Privacy is important to us, so you have the option to disable certain types of cookies that may not be necessary for the basic functioning of the website. Blocking these cookies may affect your experience on the website."
     },
     copyright: "Developed by",
     privacyPolicy: {

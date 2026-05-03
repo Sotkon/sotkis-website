@@ -45,8 +45,8 @@ export const Header: React.FC = () => {
       ],
     },
     { path: '/platform', label: 'Software' },
-    { path: '/trash4goods', label: 'App Cidadão' },
-    { path: '/P(L)ayt', label: 'P(L)ayt' },
+    { path: '/trash4goods', label: language === 'pt' ? 'App Cidadão' : 'Citizen App' },
+    { path: '/P(L)ayt', label: 'P(L)AYT' },
   ];
 
   const toggleMobileMenu = () => {
@@ -117,7 +117,7 @@ export const Header: React.FC = () => {
         {/* Mobile actions container */}
         <div className={`header__actions ${isMobileMenuOpen ? 'header__actions--expanded' : ''}`}>
           <Link to="/contact" className="header__enquire-btn">
-            {language === 'pt' ? 'Fale connosco' : 'Enquire now'}
+            {language === 'pt' ? 'Fale connosco' : 'Contact us'}
           </Link>
 
           <button
@@ -259,7 +259,7 @@ export const Header: React.FC = () => {
               </div>
             </div>
             <Link to="/contact" className="header__enquire-btn">
-              {language === 'pt' ? 'Fale connosco' : 'Enquire now'}
+              {language === 'pt' ? 'Fale connosco' : 'Contact us'}
             </Link>
           </div>
         </div>

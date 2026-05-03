@@ -28,30 +28,30 @@ export const trash4goodsTranslations = {
     },
     en: {
         hero: {
-            title: "Trash4Goods\nValue your waste",
+            title: "CITIZEN APP\nTrash4Goods\nRecycle with a purpose!",
             subtitle: "",
-            button: "Watch Video"
+            button: "Play Video"
         },
         intro: {
-            title: "What is Trash4Goods?",
-            text1: "Trash4Goods is an innovative solution that encourages recycling through a reward system. It brings together citizens and municipal services, encouraging recycling through local benefits.",
-            text2: "The app allows any municipal resident to actively participate in the selective waste deposition process, access information about collection points and track their environmental performance."
+            title: "App Trash4Goods",
+            text1: "To complement municipal waste management, SOTKIS integrates with Trash4Goods (T4G), a mobile app developed specifically for citizens. Trash4Goods is a digital solution that uses rewards and gamification to encourage recycling.",
+            text2: "The app allows any resident to actively participate in the selective waste disposal process, access information about collection points, and track their environmental performance."
         },
         howItWorks: {
-            title: "How does it work?"
+            title: "How It Works"
         },
         steps: [
-            "<strong>Log in to the app</strong> to access recycling points near you",
-            "Check all nearby containers on the map",
-            "Select the recycling point and connect to the container via Bluetooth",
-            "Make your deposit and earn points",
-            "Exchange accumulated points in the marketplace"
+            "Log in to the app to access recycling points near you",
+            "Check the map for nearby recycling bins",
+            "Select the recycling location and connect to the bin via Bluetooth",
+            "Deposit your waste and earn points",
+            "Exchange your accumulated points in the marketplace"
         ],
         app: {
-            description: "Recycle, earn points and exchange them for your favourite rewards.",
-            cta: "Discover Trash4Goods"
+            description: "Recycle, earn points, and redeem them in exchange for your favorite rewards.",
+            cta: "Learn more about Trash4Goods"
         },
-        closing: "This solution provides municipalities with a modern and effective tool to engage citizens, promoting more sustainable behaviours and contributing to increased recycling rates."
+        closing: "This solution provides municipalities with a modern and effective tool to engage citizens, promoting more sustainable behaviors and contributing to increased recycling rates."
     },
     es: {
         hero: {

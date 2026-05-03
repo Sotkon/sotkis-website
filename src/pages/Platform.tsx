@@ -154,7 +154,7 @@ export const Platform: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {language === 'pt' ? 'Aceder ao login' : 'Login'}
+              {language === 'pt' ? 'Aceder ao login' : 'Go to login'}
               <div className="platform-hero-root__cta-icon">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -332,8 +332,17 @@ export const Platform: React.FC = () => {
 
       {/* Platform Modules Section */}
       {(() => {
-        const moduleImages = [moduloLevel, moduloAccess, moduloDRS, moduloSotcare, moduloPlayt, moduloRoutes];
-        const moduleTitles = ["Level", "Access", "DRS", "Sotcare", "P(L)ayt", t.modules[5].title];
+        const getModuleImage = (title: string) => {
+          const normalized = title.toLowerCase();
+          if (normalized.includes('access')) return moduloAccess;
+          if (normalized.includes('drs')) return moduloDRS;
+          if (normalized.includes('sotcare')) return moduloSotcare;
+          if (normalized.includes('route') || normalized.includes('rota')) return moduloRoutes;
+          if (normalized.includes('p(l)')) return moduloPlayt;
+          return moduloLevel;
+        };
+        const moduleImages = t.modules.map((mod: { title: string }) => getModuleImage(mod.title));
+        const moduleTitles = t.modules.map((mod: { title: string }) => mod.title);
         return (
           <section className="platform__modules-grid section">
             <div className="container">

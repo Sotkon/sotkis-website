@@ -26,27 +26,27 @@ export const contactTranslations = {
     }
   },
   en: {
-    title: "Talk to us",
-    subtitle: "If you need information about our products and services.",
+    title: "Contact us!",
+    subtitle: "If you need information about our products and services",
     success: "Thank you! We will be in touch soon.",
     error: "Something went wrong. Please try again.",
     privacy: {
-      policy: "By entering my data I accept Sotkon's [Privacy and Cookie Policy](https://sotkon.com/en/privacy-cookie-policy/)",
+      policy: "By entering my data, I accept Sotkon's [Privacy and Cookies Policy](https://sotkon.com/en/privacy-cookie-policy/)",
       newsletter: "By entering my data, I authorize the receipt of Sotkon's newsletter"
     },
     form: {
       contactType: {
-        placeholder: "Type of contact *",
+        placeholder: "Select a Service *",
         newsletter: "Newsletter",
         distributor: "Become a Distributor",
         information: "Receive more information",
       },
-      name: { label: "Name *", placeholder: "Your name" },
-      email: { label: "Email *", placeholder: "example@email.com" },
+      name: { label: "Name *", placeholder: "Name" },
+      email: { label: "Email *", placeholder: "Email" },
       phone: { label: "Phone", placeholder: "+351 900 000 000" },
-      companyName: { label: "Company Name", placeholder: "Company Name" },
+      companyName: { label: "Company", placeholder: "Company" },
       country: { label: "Country", placeholder: "Country" },
-      comments: { label: "Comments", placeholder: "Comments / Commentários / Commentaires" },
+      comments: { label: "Message", placeholder: "Message" },
       submit: "Send Message",
       submitting: "Sending...",
     }
