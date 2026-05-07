@@ -464,10 +464,20 @@ export const Platform: React.FC = () => {
             <div className="home__app-content">
               <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
                 <div className="home__app-badges">
-                  <a href="#" className="home__app-badge">
+                  <a
+                    href="https://apps.apple.com/pt/app/sotkis/id1518871581"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="home__app-badge"
+                  >
                     <img src={appleImage} alt="Download on App Store" />
                   </a>
-                  <a href="#" className="home__app-badge">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.sotkis.mobile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="home__app-badge"
+                  >
                     <img src={googleImage} alt="Get it on Google Play" />
                   </a>
                 </div>
