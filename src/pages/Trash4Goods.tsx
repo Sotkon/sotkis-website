@@ -173,10 +173,20 @@ export const Trash4Goods: React.FC = () => {
                         <div className="trash4goods__app-content">
                             <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
                                 <div className="trash4goods__app-badges">
-                                    <a href="#" className="trash4goods__app-badge">
+                                    <a
+                                        href="https://apps.apple.com/pt/app/trash4goods/id1530985355"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="trash4goods__app-badge"
+                                    >
                                         <img src={appleImage} alt="Download on App Store" />
                                     </a>
-                                    <a href="#" className="trash4goods__app-badge">
+                                    <a
+                                        href="https://play.google.com/store/apps/details?id=com.trash4goods.trash4goods"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="trash4goods__app-badge"
+                                    >
                                         <img src={googleImage} alt="Get it on Google Play" />
                                     </a>
                                 </div>
@@ -210,10 +220,20 @@ export const Trash4Goods: React.FC = () => {
                     <h2 className="trash4goods__app-mobile-title">TRASH<span style={{ color: '#94C11F' }}>4</span>GOODS</h2>
                     <p className="trash4goods__app-mobile-description">{t.app.description}</p>
                     <div className="trash4goods__app-mobile-badges">
-                        <a href="#" className="trash4goods__app-badge">
+                        <a
+                            href="https://apps.apple.com/pt/app/trash4goods/id1530985355"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="trash4goods__app-badge"
+                        >
                             <img src={appleImage} alt="Download on App Store" />
                         </a>
-                        <a href="#" className="trash4goods__app-badge">
+                        <a
+                            href="https://play.google.com/store/apps/details?id=com.trash4goods.trash4goods"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="trash4goods__app-badge"
+                        >
                             <img src={googleImage} alt="Get it on Google Play" />
                         </a>
                     </div>
