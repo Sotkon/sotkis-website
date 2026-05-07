@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll';
 import { useLanguage } from '../contexts/LanguageContext';
 import { contactTranslations } from '../translations/contact';
@@ -15,6 +16,7 @@ const COUNTRIES = [
 
 export const Contact: React.FC = () => {
   const { language } = useLanguage();
+  const location = useLocation();
   const t = contactTranslations[language];
 
   const [formData, setFormData] = useState({
@@ -36,6 +38,20 @@ export const Contact: React.FC = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const contactType = params.get('type');
+    const email = params.get('email');
+
+    if (contactType !== 'newsletter' && !email) return;
+
+    setFormData((prev) => ({
+      ...prev,
+      contactType: contactType === 'newsletter' ? 'newsletter' : prev.contactType,
+      email: email ?? prev.email,
+    }));
+  }, [location.search]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
