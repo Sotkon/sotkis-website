@@ -200,6 +200,8 @@ export const Trash4Goods: React.FC = () => {
                             <AnimateOnScroll animation="fadeSlideUp" delay={450} duration={0.8}>
                                 <Button
                                     href="https://www.trash4goods.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     variant="primary"
                                     size="sm"
                                     className="trash4goods__cta-button"
@@ -238,7 +240,12 @@ export const Trash4Goods: React.FC = () => {
                         </a>
                     </div>
                     <img src={t4gPhoneMockup} alt="Trash4Goods app" className="trash4goods__app-mobile-phone" />
-                    <a href="https://www.trash4goods.com/" className="button button--primary button--sm trash4goods__app-mobile-cta">
+                    <a
+                        href="https://www.trash4goods.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="button button--primary button--sm trash4goods__app-mobile-cta"
+                    >
                         {t.app.cta}
                     </a>
                 </div>
