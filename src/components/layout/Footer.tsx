@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { footerTranslations } from '../../translations/footer';
 import logoImage from '../../assets/logotipo-sotkon-neg-preto.webp';
@@ -9,6 +9,16 @@ export const Footer: React.FC = () => {
   const { language } = useLanguage();
   const t = footerTranslations[language];
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+
+  const handleNewsletterSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const email = newsletterEmail.trim();
+    if (!email) return;
+
+    navigate(`/contact?type=newsletter&email=${encodeURIComponent(email)}`);
+  };
 
   return (
     <footer className="footer">
@@ -59,11 +69,14 @@ export const Footer: React.FC = () => {
           <div className="footer__section footer__section--newsletter">
             <div className="footer__newsletter">
               <h4 className="footer__newsletter-title">{t.newsletter.title}</h4>
-              <form className="footer__newsletter-form">
+              <form className="footer__newsletter-form" onSubmit={handleNewsletterSubmit}>
                 <input
                   type="email"
+                  value={newsletterEmail}
+                  onChange={(event) => setNewsletterEmail(event.target.value)}
                   placeholder={t.newsletter.placeholder}
                   className="footer__newsletter-input"
+                  required
                 />
                 <button type="submit" className="footer__newsletter-button">
                   {t.newsletter.button}
