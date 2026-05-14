@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sotkon Hub Contact Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --sotkon-green: #94c11f;
+        --sotkon-green-dark: #7da519;
+        --sotkon-ink: #223432;
+        --sotkon-muted: #5f6e6a;
+        --sotkon-border: #cfdcd0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: transparent;
+      }
+
+      body {
+        padding: 0;
+        color: var(--sotkon-ink);
+        font-family: "Plus Jakarta Sans", Arial, sans-serif;
+      }
+
+      .shc-card {
+        width: min(760px, 100%);
+        margin: 0 auto;
+        padding: 28px;
+        background: #ffffff;
+        border: 1px solid #e3ebe0;
+        border-radius: 8px;
+        box-shadow: 0 18px 54px rgba(44, 62, 60, 0.12);
+      }
+
+      .shc-title {
+        margin: 0 0 22px;
+        color: var(--sotkon-ink);
+        font-size: 2rem;
+        line-height: 1.15;
+        font-weight: 700;
+      }
+
+      .shc-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .shc-field {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .shc-field-full,
+      .shc-consents,
+      .shc-actions {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        color: #344642;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        min-height: 46px;
+        padding: 11px 13px;
+        border: 1px solid var(--sotkon-border);
+        border-radius: 6px;
+        color: var(--sotkon-ink);
+        background: #ffffff;
+        font: inherit;
+        font-size: 0.95rem;
+      }
+
+      textarea {
+        min-height: 116px;
+        resize: vertical;
+        line-height: 1.5;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--sotkon-green);
+        background: #fdfffb;
+        box-shadow: 0 0 0 4px rgba(148, 193, 31, 0.16);
+      }
+
+      .shc-hidden {
+        display: none !important;
+      }
+
+      .shc-consents {
+        display: grid;
+        gap: 10px;
+        margin-top: 4px;
+      }
+
+      .shc-checkbox {
+        display: grid;
+        grid-template-columns: 20px 1fr;
+        gap: 10px;
+        align-items: start;
+        color: #4c5f5b;
+        font-size: 0.9rem;
+        line-height: 1.45;
+        text-transform: none;
+        letter-spacing: 0;
+        font-weight: 400;
+        cursor: pointer;
+      }
+
+      .shc-checkbox input {
+        width: 18px;
+        height: 18px;
+        min-height: 18px;
+        margin: 2px 0 0;
+        accent-color: var(--sotkon-green);
+      }
+
+      .shc-checkbox a {
+        color: #5d7f0b;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .shc-checkbox a:hover {
+        text-decoration: underline;
+      }
+
+      .shc-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      .shc-submit {
+        min-height: 44px;
+        padding: 0 28px;
+        border: 0;
+        border-radius: 6px;
+        color: var(--sotkon-ink);
+        background: var(--sotkon-green);
+        font-size: 0.86rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .shc-submit:hover {
+        background: var(--sotkon-green-dark);
+      }
+
+      .shc-submit:disabled {
+        cursor: not-allowed;
+        opacity: 0.65;
+      }
+
+      .shc-status {
+        margin: 0;
+        font-size: 0.92rem;
+        font-weight: 700;
+      }
+
+      .shc-status-success {
+        color: #4e7a08;
+      }
+
+      .shc-status-error {
+        color: #c53c3c;
+      }
+
+      @media (max-width: 620px) {
+        .shc-card {
+          padding: 20px;
+          box-shadow: none;
+        }
+
+        .shc-form {
+          grid-template-columns: 1fr;
+        }
+
+        .shc-submit {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shc-card">
+      <h2 class="shc-title">Contact us</h2>
+
+      <form class="shc-form" id="sotkonHubContactForm">
+        <div class="shc-field shc-field-full">
+          <label for="shcContactType">Type of contact *</label>
+          <select id="shcContactType" name="contactType" required>
+            <option value="">Select a Service *</option>
+            <option value="newsletter">Newsletter</option>
+            <option value="distributor">Become a Distributor</option>
+            <option value="information">Receive more information</option>
+          </select>
+        </div>
+
+        <div class="shc-field shc-field-company shc-hidden">
+          <label for="shcCompanyName">Company</label>
+          <input id="shcCompanyName" name="companyName" type="text" autocomplete="organization" placeholder="Company">
+        </div>
+
+        <div class="shc-field shc-field-name shc-hidden">
+          <label for="shcName">Name</label>
+          <input id="shcName" name="name" type="text" autocomplete="name" placeholder="Name">
+        </div>
+
+        <div class="shc-field shc-field-email shc-hidden">
+          <label for="shcEmail">Email *</label>
+          <input id="shcEmail" name="email" type="email" autocomplete="email" placeholder="Email">
+        </div>
+
+        <div class="shc-field shc-field-phone shc-hidden">
+          <label for="shcPhone">Phone</label>
+          <input id="shcPhone" name="phone" type="tel" autocomplete="tel" placeholder="+351 900 000 000">
+        </div>
+
+        <div class="shc-field shc-field-country shc-hidden">
+          <label for="shcCountry">Country</label>
+          <select id="shcCountry" name="country">
+            <option value="">Country</option>
+            <option>Portugal</option>
+            <option>Spain</option>
+            <option>France</option>
+            <option>Germany</option>
+            <option>Italy</option>
+            <option>United Kingdom</option>
+            <option>Netherlands</option>
+            <option>Belgium</option>
+            <option>Switzerland</option>
+            <option>Austria</option>
+            <option>Poland</option>
+            <option>Sweden</option>
+            <option>Norway</option>
+            <option>Denmark</option>
+            <option>Finland</option>
+            <option>Ireland</option>
+            <option>Czech Republic</option>
+            <option>Romania</option>
+            <option>Hungary</option>
+            <option>Greece</option>
+            <option>Brazil</option>
+            <option>United States</option>
+            <option>Canada</option>
+            <option>Mexico</option>
+            <option>Argentina</option>
+            <option>Colombia</option>
+            <option>Chile</option>
+            <option>China</option>
+            <option>Japan</option>
+            <option>India</option>
+            <option>Australia</option>
+            <option>South Africa</option>
+            <option>United Arab Emirates</option>
+            <option>Saudi Arabia</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="shc-field shc-field-comments shc-field-full shc-hidden">
+          <label for="shcComments">Message</label>
+          <textarea id="shcComments" name="comments" rows="4" placeholder="Message"></textarea>
+        </div>
+
+        <div class="shc-consents">
+          <label class="shc-checkbox">
+            <input id="shcPrivacy" name="privacyPolicy" type="checkbox" required>
+            <span>
+              By entering my data, I accept Sotkon's
+              <a href="https://sotkon.com/en/privacy-cookie-policy/" target="_blank" rel="noopener noreferrer">Privacy and Cookies Policy</a>
+            </span>
+          </label>
+
+          <label class="shc-checkbox">
+            <input id="shcNewsletter" name="newsletter" type="checkbox">
+            <span>By entering my data, I authorize the receipt of Sotkon's newsletter</span>
+          </label>
+        </div>
+
+        <div class="shc-actions">
+          <button class="shc-submit" id="shcSubmit" type="submit">Send Message</button>
+          <p class="shc-status" id="shcStatus" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      (function () {
+        var HUB_URL = "https://hub.sotkon.org/api/web-contacts";
+        var form = document.getElementById("sotkonHubContactForm");
+        var contactType = document.getElementById("shcContactType");
+        var email = document.getElementById("shcEmail");
+        var submit = document.getElementById("shcSubmit");
+        var status = document.getElementById("shcStatus");
+
+        var fields = {
+          company: document.querySelector(".shc-field-company"),
+          name: document.querySelector(".shc-field-name"),
+          email: document.querySelector(".shc-field-email"),
+          phone: document.querySelector(".shc-field-phone"),
+          country: document.querySelector(".shc-field-country"),
+          comments: document.querySelector(".shc-field-comments")
+        };
+
+        function setVisible(field, visible) {
+          field.classList.toggle("shc-hidden", !visible);
+        }
+
+        function updateFields() {
+          var type = contactType.value;
+
+          setVisible(fields.company, type === "distributor");
+          setVisible(fields.phone, type === "distributor");
+          setVisible(fields.country, type === "newsletter" || type === "distributor");
+          setVisible(fields.comments, type === "distributor" || type === "information");
+          setVisible(fields.name, type === "newsletter" || type === "information");
+          setVisible(fields.email, !!type);
+
+          email.required = !!type;
+          status.textContent = "";
+          status.className = "shc-status";
+        }
+
+        function value(id) {
+          return document.getElementById(id).value.trim();
+        }
+
+        function checked(id) {
+          return document.getElementById(id).checked;
+        }
+
+        function resetForm() {
+          form.reset();
+          updateFields();
+        }
+
+        contactType.addEventListener("change", updateFields);
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          if (!form.reportValidity()) return;
+
+          var payload = {
+            contactType: value("shcContactType"),
+            email: value("shcEmail"),
+            name: value("shcName") || null,
+            country: value("shcCountry") || null,
+            companyName: value("shcCompanyName") || null,
+            phone: value("shcPhone") || null,
+            comments: value("shcComments") || null,
+            privacyAccepted: checked("shcPrivacy"),
+            newsletterConsent: checked("shcNewsletter"),
+            privacyPolicyVersion: "v1.0"
+          };
+
+          submit.disabled = true;
+          submit.textContent = "Sending...";
+          status.textContent = "";
+          status.className = "shc-status";
+
+          fetch(HUB_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+          })
+            .then(function (response) {
+              if (!response.ok) throw new Error("Hub error");
+              status.textContent = "Thank you! We will be in touch soon.";
+              status.className = "shc-status shc-status-success";
+              resetForm();
+            })
+            .catch(function () {
+              status.textContent = "Something went wrong. Please try again.";
+              status.className = "shc-status shc-status-error";
+            })
+            .finally(function () {
+              submit.disabled = false;
+              submit.textContent = "Send Message";
+            });
+        });
+
+        updateFields();
+      })();
+    </script>
+  </body>
+</html>
