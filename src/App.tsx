@@ -7,6 +7,7 @@ import { Access } from './pages/Access';
 import { Level } from './pages/Level';
 import { DRS } from './pages/DRS';
 import { Contact } from './pages/Contact';
+import { ContactLightPrototype } from './pages/ContactLightPrototype';
 import { Trash4Goods } from './pages/Trash4Goods';
 import { MobileApp } from './pages/MobileApp';
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="drs" element={<DRS />} />
         <Route path="P(L)ayt" element={<Paylt />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="contact-light-prototype" element={<ContactLightPrototype />} />
         <Route path="trash4goods" element={<Trash4Goods />} />
       </Route>
     </Routes>
