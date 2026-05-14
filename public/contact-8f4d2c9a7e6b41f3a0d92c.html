@@ -211,43 +211,43 @@
   </head>
   <body>
     <div class="shc-card">
-      <h2 class="shc-title">Contact us</h2>
+      <h2 class="shc-title" data-shc-text="title">Contact us</h2>
 
       <form class="shc-form" id="sotkonHubContactForm">
         <div class="shc-field shc-field-full">
-          <label for="shcContactType">Type of contact *</label>
+          <label for="shcContactType" data-shc-text="contactTypeLabel">Type of contact *</label>
           <select id="shcContactType" name="contactType" required>
-            <option value="">Select a Service *</option>
-            <option value="newsletter">Newsletter</option>
-            <option value="distributor">Become a Distributor</option>
-            <option value="information">Receive more information</option>
+            <option value="" data-shc-text="contactTypePlaceholder">Select a Service *</option>
+            <option value="newsletter" data-shc-text="newsletterOption">Newsletter</option>
+            <option value="distributor" data-shc-text="distributorOption">Become a Distributor</option>
+            <option value="information" data-shc-text="informationOption">Receive more information</option>
           </select>
         </div>
 
         <div class="shc-field shc-field-company shc-hidden">
-          <label for="shcCompanyName">Company</label>
-          <input id="shcCompanyName" name="companyName" type="text" autocomplete="organization" placeholder="Company">
+          <label for="shcCompanyName" data-shc-text="companyLabel">Company</label>
+          <input id="shcCompanyName" name="companyName" type="text" autocomplete="organization" placeholder="Company" data-shc-placeholder="companyPlaceholder">
         </div>
 
         <div class="shc-field shc-field-name shc-hidden">
-          <label for="shcName">Name</label>
-          <input id="shcName" name="name" type="text" autocomplete="name" placeholder="Name">
+          <label for="shcName" data-shc-text="nameLabel">Name</label>
+          <input id="shcName" name="name" type="text" autocomplete="name" placeholder="Name" data-shc-placeholder="namePlaceholder">
         </div>
 
         <div class="shc-field shc-field-email shc-hidden">
-          <label for="shcEmail">Email *</label>
-          <input id="shcEmail" name="email" type="email" autocomplete="email" placeholder="Email">
+          <label for="shcEmail" data-shc-text="emailLabel">Email *</label>
+          <input id="shcEmail" name="email" type="email" autocomplete="email" placeholder="Email" data-shc-placeholder="emailPlaceholder">
         </div>
 
         <div class="shc-field shc-field-phone shc-hidden">
-          <label for="shcPhone">Phone</label>
-          <input id="shcPhone" name="phone" type="tel" autocomplete="tel" placeholder="+351 900 000 000">
+          <label for="shcPhone" data-shc-text="phoneLabel">Phone</label>
+          <input id="shcPhone" name="phone" type="tel" autocomplete="tel" placeholder="+351 900 000 000" data-shc-placeholder="phonePlaceholder">
         </div>
 
         <div class="shc-field shc-field-country shc-hidden">
-          <label for="shcCountry">Country</label>
+          <label for="shcCountry" data-shc-text="countryLabel">Country</label>
           <select id="shcCountry" name="country">
-            <option value="">Country</option>
+            <option value="" data-shc-text="countryPlaceholder">Country</option>
             <option>Portugal</option>
             <option>Spain</option>
             <option>France</option>
@@ -287,14 +287,14 @@
         </div>
 
         <div class="shc-field shc-field-comments shc-field-full shc-hidden">
-          <label for="shcComments">Message</label>
-          <textarea id="shcComments" name="comments" rows="4" placeholder="Message"></textarea>
+          <label for="shcComments" data-shc-text="commentsLabel">Message</label>
+          <textarea id="shcComments" name="comments" rows="4" placeholder="Message" data-shc-placeholder="commentsPlaceholder"></textarea>
         </div>
 
         <div class="shc-consents">
           <label class="shc-checkbox">
             <input id="shcPrivacy" name="privacyPolicy" type="checkbox" required>
-            <span>
+            <span data-shc-consent="privacy">
               By entering my data, I accept Sotkon's
               <a href="https://sotkon.com/en/privacy-cookie-policy/" target="_blank" rel="noopener noreferrer">Privacy and Cookies Policy</a>
             </span>
@@ -302,12 +302,12 @@
 
           <label class="shc-checkbox">
             <input id="shcNewsletter" name="newsletter" type="checkbox">
-            <span>By entering my data, I authorize the receipt of Sotkon's newsletter</span>
+            <span data-shc-text="newsletterConsent">By entering my data, I authorize the receipt of Sotkon's newsletter</span>
           </label>
         </div>
 
         <div class="shc-actions">
-          <button class="shc-submit" id="shcSubmit" type="submit">Send Message</button>
+          <button class="shc-submit" id="shcSubmit" type="submit" data-shc-text="submit">Send Message</button>
           <p class="shc-status" id="shcStatus" aria-live="polite"></p>
         </div>
       </form>
@@ -316,11 +316,126 @@
     <script>
       (function () {
         var HUB_URL = "https://hub.sotkon.org/api/web-contacts";
+        var translations = {
+          en: {
+            title: "Contact us",
+            contactTypeLabel: "Type of contact *",
+            contactTypePlaceholder: "Select a Service *",
+            newsletterOption: "Newsletter",
+            distributorOption: "Become a Distributor",
+            informationOption: "Receive more information",
+            companyLabel: "Company",
+            companyPlaceholder: "Company",
+            nameLabel: "Name",
+            namePlaceholder: "Name",
+            emailLabel: "Email *",
+            emailPlaceholder: "Email",
+            phoneLabel: "Phone",
+            phonePlaceholder: "+351 900 000 000",
+            countryLabel: "Country",
+            countryPlaceholder: "Country",
+            commentsLabel: "Message",
+            commentsPlaceholder: "Message",
+            privacyPrefix: "By entering my data, I accept Sotkon's",
+            privacyLink: "Privacy and Cookies Policy",
+            privacyUrl: "https://sotkon.com/en/privacy-cookie-policy/",
+            newsletterConsent: "By entering my data, I authorize the receipt of Sotkon's newsletter",
+            submit: "Send Message",
+            submitting: "Sending...",
+            success: "Thank you! We will be in touch soon.",
+            error: "Something went wrong. Please try again."
+          },
+          pt: {
+            title: "Fale connosco",
+            contactTypeLabel: "Tipo de contacto *",
+            contactTypePlaceholder: "Tipo de contacto *",
+            newsletterOption: "Newsletter",
+            distributorOption: "Tornar-me Distribuidor",
+            informationOption: "Receber mais informação",
+            companyLabel: "Empresa",
+            companyPlaceholder: "Empresa",
+            nameLabel: "Nome",
+            namePlaceholder: "Nome",
+            emailLabel: "Correio Eletrónico *",
+            emailPlaceholder: "exemplo@email.com",
+            phoneLabel: "Telefone",
+            phonePlaceholder: "+351 900 000 000",
+            countryLabel: "País",
+            countryPlaceholder: "País",
+            commentsLabel: "Comentários",
+            commentsPlaceholder: "Comentários",
+            privacyPrefix: "Ao introduzir os meus dados eu aceito a",
+            privacyLink: "Política de Privacidade e Cookies da Sotkon",
+            privacyUrl: "https://sotkon.com/pt/privacy-policy/",
+            newsletterConsent: "Ao introduzir os meus dados, autorizo a receção da newsletter da Sotkon",
+            submit: "Enviar Mensagem",
+            submitting: "A enviar...",
+            success: "Obrigado! Entraremos em contacto em breve.",
+            error: "Algo correu mal. Por favor, tente novamente."
+          },
+          es: {
+            title: "Hable con nosotros",
+            contactTypeLabel: "Tipo de contacto *",
+            contactTypePlaceholder: "Tipo de contacto *",
+            newsletterOption: "Newsletter",
+            distributorOption: "Convertirse en Distribuidor",
+            informationOption: "Recibir más información",
+            companyLabel: "Empresa",
+            companyPlaceholder: "Empresa",
+            nameLabel: "Nombre",
+            namePlaceholder: "Nombre",
+            emailLabel: "Correo Electrónico *",
+            emailPlaceholder: "ejemplo@email.com",
+            phoneLabel: "Teléfono",
+            phonePlaceholder: "+351 900 000 000",
+            countryLabel: "País",
+            countryPlaceholder: "País",
+            commentsLabel: "Mensaje",
+            commentsPlaceholder: "Mensaje",
+            privacyPrefix: "Al introducir mis datos acepto la",
+            privacyLink: "Política de Privacidad y Cookies de Sotkon",
+            privacyUrl: "https://sotkon.com/en/privacy-cookie-policy/",
+            newsletterConsent: "Al introducir mis datos, autorizo la recepción del boletín de Sotkon",
+            submit: "Enviar Mensaje",
+            submitting: "Enviando...",
+            success: "Gracias. Nos pondremos en contacto pronto.",
+            error: "Algo salió mal. Por favor, inténtelo de nuevo."
+          },
+          fr: {
+            title: "Parlez-nous",
+            contactTypeLabel: "Type de contact *",
+            contactTypePlaceholder: "Type de contact *",
+            newsletterOption: "Newsletter",
+            distributorOption: "Devenir Distributeur",
+            informationOption: "Recevoir plus d'informations",
+            companyLabel: "Entreprise",
+            companyPlaceholder: "Entreprise",
+            nameLabel: "Nom",
+            namePlaceholder: "Nom",
+            emailLabel: "Email *",
+            emailPlaceholder: "exemple@email.com",
+            phoneLabel: "Téléphone",
+            phonePlaceholder: "+351 900 000 000",
+            countryLabel: "Pays",
+            countryPlaceholder: "Pays",
+            commentsLabel: "Message",
+            commentsPlaceholder: "Message",
+            privacyPrefix: "En saisissant mes données, j'accepte la",
+            privacyLink: "Politique de Confidentialité et Cookies de Sotkon",
+            privacyUrl: "https://sotkon.com/en/privacy-cookie-policy/",
+            newsletterConsent: "En saisissant mes données, j'autorise la réception de la newsletter de Sotkon",
+            submit: "Envoyer le Message",
+            submitting: "Envoi en cours...",
+            success: "Merci. Nous vous contacterons bientôt.",
+            error: "Quelque chose s'est mal passé. Veuillez réessayer."
+          }
+        };
         var form = document.getElementById("sotkonHubContactForm");
         var contactType = document.getElementById("shcContactType");
         var email = document.getElementById("shcEmail");
         var submit = document.getElementById("shcSubmit");
         var status = document.getElementById("shcStatus");
+        var activeText = translations.en;
 
         var fields = {
           company: document.querySelector(".shc-field-company"),
@@ -330,6 +445,35 @@
           country: document.querySelector(".shc-field-country"),
           comments: document.querySelector(".shc-field-comments")
         };
+
+        function getLanguage() {
+          var params = new URLSearchParams(window.location.search);
+          var requested = params.get("lang");
+          var referrer = document.referrer || "";
+          var referrerMatch = referrer.match(/\/(pt|en|es|fr)(\/|$)/i);
+          var browserLanguage = (navigator.language || "en").slice(0, 2).toLowerCase();
+          var language = (requested || (referrerMatch && referrerMatch[1]) || browserLanguage || "en").toLowerCase();
+          return translations[language] ? language : "en";
+        }
+
+        function applyLanguage() {
+          var language = getLanguage();
+          activeText = translations[language];
+          document.documentElement.lang = language;
+
+          document.querySelectorAll("[data-shc-text]").forEach(function (element) {
+            var key = element.getAttribute("data-shc-text");
+            if (activeText[key]) element.textContent = activeText[key];
+          });
+
+          document.querySelectorAll("[data-shc-placeholder]").forEach(function (element) {
+            var key = element.getAttribute("data-shc-placeholder");
+            if (activeText[key]) element.setAttribute("placeholder", activeText[key]);
+          });
+
+          document.querySelector("[data-shc-consent='privacy']").innerHTML =
+            activeText.privacyPrefix + ' <a href="' + activeText.privacyUrl + '" target="_blank" rel="noopener noreferrer">' + activeText.privacyLink + "</a>";
+        }
 
         function setVisible(field, visible) {
           field.classList.toggle("shc-hidden", !visible);
@@ -384,7 +528,7 @@
           };
 
           submit.disabled = true;
-          submit.textContent = "Sending...";
+          submit.textContent = activeText.submitting;
           status.textContent = "";
           status.className = "shc-status";
 
@@ -397,20 +541,21 @@
           })
             .then(function (response) {
               if (!response.ok) throw new Error("Hub error");
-              status.textContent = "Thank you! We will be in touch soon.";
+              status.textContent = activeText.success;
               status.className = "shc-status shc-status-success";
               resetForm();
             })
             .catch(function () {
-              status.textContent = "Something went wrong. Please try again.";
+              status.textContent = activeText.error;
               status.className = "shc-status shc-status-error";
             })
             .finally(function () {
               submit.disabled = false;
-              submit.textContent = "Send Message";
+              submit.textContent = activeText.submit;
             });
         });
 
+        applyLanguage();
         updateFields();
       })();
     </script>
