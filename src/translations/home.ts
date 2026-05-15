@@ -12,7 +12,7 @@ export const homeTranslations = {
     hardwareIntro: "A Sotkon disponibiliza um conjunto de dispositivos inteligentes para colocação na ilha de deposição de resíduos, que permitem a monitorização eficiente dos contentores. É a infraestrutura física que liga os equipamentos à gestão digital.",
     riseAbove: {
       title: "Software",
-      text: "A plataforma SOTKIS, que inclui o portal online e a app, consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos.",
+      text: "<span class=\"home__rise-above-text--black\">A plataforma SOTKIS</span>, que inclui o portal online e a app, consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos.",
       button: "Explorar o Software"
     },
     access: {
@@ -52,13 +52,13 @@ export const homeTranslations = {
       description: "Create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralize information, optimize municipal operations, and enhance the citizen experience."
     },
     intro: {
-      title: "Transform your community's waste management!",
+      title: "A solution for all types of <span class=\"home__intro-highlight\">containers</span>",
       description: "Create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralize information, optimize municipal operations, and enhance the citizen experience."
     },
     hardwareIntro: "Sotkon offers a range of intelligent devices designed for installation at waste collection points, enabling efficient monitoring of waste containers. This physical infrastructure connects the equipment to the digital management system.",
     riseAbove: {
       title: "Software",
-      text: "The SOTKIS platform, which includes the online portal and the app, consists of an integrated management system that collects and manages information on the processes involved in the disposal and/or collection of waste.",
+      text: "<span class=\"home__rise-above-text--black\">The SOTKIS platform</span>, which includes the online portal and the app, consists of an integrated management system that collects and manages information on the processes involved in the disposal and/or collection of waste.",
       button: "Explore Software"
     },
     access: {
@@ -98,13 +98,13 @@ export const homeTranslations = {
       description: "Prepárese para crear ciudades inteligentes y comunidades ambientalmente sostenibles a través de nuestros sistemas inteligentes. SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT y una plataforma digital para centralizar información, optimizar operaciones municipales y valorar la experiencia del usuario final."
     },
     intro: {
-      title: "Una solución para todo tipo de contenedores",
+      title: "Una solución para todo tipo de <span class=\"home__intro-highlight\">contenedores</span>",
       description: "Transforme la gestión de residuos de su comunidad. Cree ciudades inteligentes y comunidades ambientalmente sostenibles a través de nuestros sistemas inteligentes. SOTKIS (Sotkon Intelligent Systems) integra dispositivos IoT y una plataforma digital para centralizar información, optimizar operaciones municipales y valorar la experiencia de los ciudadanos."
     },
     hardwareIntro: "Sotkon pone a disposición un conjunto de dispositivos inteligentes para su instalación en los puntos de deposición de residuos, que permiten la monitorización eficiente de los contenedores. Es la infraestructura física que conecta los equipos con la gestión digital.",
     riseAbove: {
       title: "Plataforma Digital",
-      text: "La plataforma SOTKIS, que incluye el portal en línea y la aplicación, consiste en un sistema integrado de gestión que recopila y trata información sobre los diversos procesos implicados en el depósito y/o recogida de residuos.",
+      text: "<span class=\"home__rise-above-text--black\">La plataforma SOTKIS</span>, que incluye el portal web y la aplicación, consiste en un sistema de gestión integrado que recoge y trata la información relativa a los diversos procesos relacionados con el depósito y/o recogida de residuos.",
       button: "Explorar la Plataforma"
     },
     access: {
@@ -124,7 +124,7 @@ export const homeTranslations = {
     },
     paylt: {
       title: "P(L)AYT",
-      description: "Todas las soluciones SOTKIS en un único ecosistema.",
+      description: "Todas las soluciones SOTKIS en un único ecosistema",
       button: "Explorar P(L)ayt"
     },
     t4g: {
@@ -144,13 +144,13 @@ export const homeTranslations = {
       description: "Préparez-vous à créer des villes intelligentes et des communautés respectueuses de l'environnement grâce à nos systèmes intelligents. SOTKIS (Sotkon Intelligent Systems) intègre des appareils IoT et une plateforme numérique pour centraliser les informations, optimiser les opérations municipales et valoriser l'expérience de l'utilisateur final."
     },
     intro: {
-      title: "Une solution pour tous les types de conteneurs",
+      title: "Une solution pour tous les types de <span class=\"home__intro-highlight\">conteneurs</span>",
       description: "Transformez la gestion des déchets de votre communauté. Créez des villes intelligentes et des communautés respectueuses de l'environnement grâce à nos systèmes intelligents. SOTKIS (Sotkon Intelligent Systems) intègre des appareils IoT et une plateforme numérique pour centraliser les informations, optimiser les opérations municipales et valoriser l'expérience des citoyens."
     },
     hardwareIntro: "Sotkon met à disposition un ensemble de dispositifs intelligents pour installation sur les îlots de déchets, permettant une surveillance efficace des conteneurs. C'est l'infrastructure physique qui relie les équipements à la gestion numérique.",
     riseAbove: {
       title: "Plateforme Digitale",
-      text: "La plateforme SOTKIS, qui comprend le portail en ligne et l'application, est un système de gestion intégré qui collecte et traite les informations sur les divers processus impliqués dans le dépôt et/ou la collecte des déchets.",
+      text: "<span class=\"home__rise-above-text--black\">La plateforme SOTKIS</span>, qui comprend le portail web et l'application, est un système de gestion intégré qui recueille et traite les informations relatives aux différents processus liés au dépôt et/ou à la collecte des déchets.",
       button: "Explorer la Plateforme"
     },
     access: {
@@ -170,7 +170,7 @@ export const homeTranslations = {
     },
     paylt: {
       title: "P(L)AYT",
-      description: "Toutes les solutions SOTKIS dans un seul écosystème.",
+      description: "Toutes les solutions SOTKIS au sein d'un écosystème unique",
       button: "Explorer P(L)ayt"
     },
     t4g: {
@@ -190,13 +190,13 @@ export const homeTranslations = {
       description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralize information, optimize municipal operations and enhance the end-user experience."
     },
     intro: {
-      title: "A solution for all types of containers",
+      title: "A solution for all types of <span class=\"home__intro-highlight\">containers</span>",
       description: "Transform waste management in your community. Create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralise information, optimise municipal operations and enhance the citizen experience."
     },
     hardwareIntro: "Sotkon provides a set of intelligent devices for placement at waste disposal points, enabling efficient monitoring of containers. It is the physical infrastructure that connects the equipment to digital management.",
     riseAbove: {
       title: "Digital Platform",
-      text: "The SOTKIS platform (Sotkon Intelligent Systems) is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
+      text: "<span class=\"home__rise-above-text--black\">The SOTKIS platform</span> (Sotkon Intelligent Systems) is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
       button: "Explore the Platform"
     },
     access: {
@@ -236,13 +236,13 @@ export const homeTranslations = {
       description: "We are ready to create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralize information, optimize municipal operations and enhance the end-user experience."
     },
     intro: {
-      title: "A solution for all types of containers",
+      title: "A solution for all types of <span class=\"home__intro-highlight\">containers</span>",
       description: "Transform waste management in your community. Create smart cities and environmentally sustainable communities through our intelligent systems. SOTKIS (Sotkon Intelligent Systems) integrates IoT devices and a digital platform to centralise information, optimise municipal operations and enhance the citizen experience."
     },
     hardwareIntro: "Sotkon provides a set of intelligent devices for placement at waste disposal points, enabling efficient monitoring of containers. It is the physical infrastructure that connects the equipment to digital management.",
     riseAbove: {
       title: "Digital Platform",
-      text: "The SOTKIS platform (Sotkon Intelligent Systems) is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
+      text: "<span class=\"home__rise-above-text--black\">The SOTKIS platform</span> (Sotkon Intelligent Systems) is an integrated management system that collects and processes information about the various processes involved in waste deposition and/or collection.",
       button: "Explore the Platform"
     },
     access: {
