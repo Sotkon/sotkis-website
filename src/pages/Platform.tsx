@@ -4,9 +4,15 @@ import { AnimatedHeroTitle } from '../components/ui/AnimatedHeroTitle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { platformTranslations } from '../translations/platform';
 import { homeTranslations } from '../translations/home';
-import platformHeroImage from '../assets/Mockup-Desktop+Mobile-Sotkis-PT.webp';
+import platformHeroImagePt from '../assets/Assets Traduzidos/PT/Mockup-Desktop-Mobile-Sotkis-pt.png';
+import platformHeroImageEn from '../assets/Assets Traduzidos/EN/Mockup-Desktop-Mobile-Sotkis-en.png';
+import platformHeroImageEs from '../assets/Assets Traduzidos/ES/Mockup-Desktop-Mobile-Sotkis-es.png';
+import platformHeroImageFr from '../assets/Assets Traduzidos/FR/Mockup-Desktop-Mobile-Sotkis-fr.png';
 import plat2Image from '../assets/plat2.png';
-import seloImage from '../assets/selo.webp';
+import stampImagePt from '../assets/Assets Traduzidos/PT/stamp-pt-web.png';
+import stampImageEn from '../assets/Assets Traduzidos/EN/stamp-en-web.png';
+import stampImageEs from '../assets/Assets Traduzidos/ES/stamp-es-web.png';
+import stampImageFr from '../assets/Assets Traduzidos/FR/stamp-fr-web.png';
 import dashboardsImage from '../assets/PLATAFORMA-Dashboards.webp';
 import niveisImage from '../assets/PLATAFORMA-Niveis-Enchimento-.webp';
 import sotcareImage from '../assets/PLATAFORMA-Manutenções-Sotcare.webp';
@@ -17,7 +23,7 @@ import googleImage from '../assets/google.webp';
 const videoApp = new URL('../assets/app_video.mp4', import.meta.url).href;
 import moduloLevel from '../assets/ModuloSotkisLevel.webp';
 import moduloAccess from '../assets/ModuloSotkisAccess.webp';
-import moduloDRS from '../assets/ModuloSotkisDRS.webp';
+import moduloDRS from '../assets/DRSSOFT.png';
 import moduloSotcare from '../assets/ModuloSotcare.webp';
 import moduloPlayt from '../assets/ModuloSotkisPLAYT.webp';
 import moduloRoutes from '../assets/ModuloSotkisRoutes.webp';
@@ -25,10 +31,26 @@ import moduloRoutes from '../assets/ModuloSotkisRoutes.webp';
 import './Platform.css';
 import './Home.css';
 
+const platformHeroImages: Record<string, string> = {
+  pt: platformHeroImagePt,
+  en: platformHeroImageEn,
+  es: platformHeroImageEs,
+  fr: platformHeroImageFr
+};
+
+const stampImages: Record<string, string> = {
+  pt: stampImagePt,
+  en: stampImageEn,
+  es: stampImageEs,
+  fr: stampImageFr
+};
+
 export const Platform: React.FC = () => {
   const { language } = useLanguage();
   const t = platformTranslations[language];
   const homeT = homeTranslations[language];
+  const platformHeroImage = platformHeroImages[language] ?? platformHeroImagePt;
+  const stampImage = stampImages[language] ?? stampImagePt;
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isVideoMuted, setIsVideoMuted] = useState(false);
@@ -163,7 +185,7 @@ export const Platform: React.FC = () => {
             </a>
           </div>
         </div>
-        <img src={seloImage} alt="Selo SOTKIS" className="platform-hero-root__selo" />
+        <img src={stampImage} alt="Selo SOTKIS" className="platform-hero-root__selo" />
       </div>
 
       {/* Intro Section */}

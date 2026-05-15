@@ -14,14 +14,24 @@ import depositarIcon from '../assets/icon-2.webp';
 import pontuarIcon from '../assets/prize.webp';
 import trocarIcon from '../assets/DRS.webp';
 import marketplaceIcon from '../assets/marketplace.png';
-import drsSc from '../assets/drsesq.png';
-import drsScEn from '../assets/drsesq_en.png';
+import drsCycleImagePt from '../assets/Assets Traduzidos/PT/drs-graf-pt-web.png';
+import drsCycleImageEn from '../assets/Assets Traduzidos/EN/drs-graf-en-web.png';
+import drsCycleImageEs from '../assets/Assets Traduzidos/ES/drs-graf-es-web.png';
+import drsCycleImageFr from '../assets/Assets Traduzidos/FR/drs-graf-fr-web.png';
 
 import './DRS.css';
+
+const drsCycleImages: Record<string, string> = {
+  pt: drsCycleImagePt,
+  en: drsCycleImageEn,
+  es: drsCycleImageEs,
+  fr: drsCycleImageFr
+};
 
 export const DRS: React.FC = () => {
   const { language } = useLanguage();
   const t = drsTranslations[language];
+  const drsCycleImage = drsCycleImages[language] ?? drsCycleImagePt;
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   const openVideoModal = () => {
@@ -193,7 +203,7 @@ export const DRS: React.FC = () => {
             <h2 className="drs__cycle-scheme-title">{t.cycle.title}</h2>
           </AnimateOnScroll>
           <AnimateOnScroll animation="scaleUp" delay={150} duration={0.9}>
-            <img src={language === 'pt' ? drsSc : drsScEn} alt={t.cycle.title} className="drs__cycle-scheme-image" />
+            <img src={drsCycleImage} alt={t.cycle.title} className="drs__cycle-scheme-image" />
           </AnimateOnScroll>
         </div>
       </section>

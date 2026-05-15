@@ -14,15 +14,35 @@ import accessSmImage from '../assets/newAccess.webp';
 import levelSmImage from '../assets/LEVEL-SondaREEN2-1.webp';
 import drsSmImage from '../assets/SFS07103.webp';
 import trash4goodsImage from '../assets/trash4goods-pic.webp';
-import payltInfoImage from '../assets/rainbow_homepage.png';
+import payltInfoImagePt from '../assets/Assets Traduzidos/PT/playt-graf-pt-web.png';
+import payltInfoImageEn from '../assets/Assets Traduzidos/EN/playt-graf-en-web.png';
+import payltInfoImageEs from '../assets/Assets Traduzidos/ES/playt-graf-es-web.png';
+import payltInfoImageFr from '../assets/Assets Traduzidos/FR/playt-graf-fr-web.png';
 import heroBgImage from '../assets/DSC09612.jpeg';
 import heroBgImageMobile from '../assets/DSC09612 copy.jpeg';
 import capaAssetImage from '../assets/capa-asset-1.webp';
 import logoPlayt from '../assets/logo-playt.webp';
 import iphoneMockupImage from '../assets/iPhone-Hand-Mockup.webp';
-import seloImage from '../assets/selo.webp';
+import stampImagePt from '../assets/Assets Traduzidos/PT/stamp-pt-web.png';
+import stampImageEn from '../assets/Assets Traduzidos/EN/stamp-en-web.png';
+import stampImageEs from '../assets/Assets Traduzidos/ES/stamp-es-web.png';
+import stampImageFr from '../assets/Assets Traduzidos/FR/stamp-fr-web.png';
 
 import './Home.css';
+
+const payltInfoImages: Record<string, string> = {
+  pt: payltInfoImagePt,
+  en: payltInfoImageEn,
+  es: payltInfoImageEs,
+  fr: payltInfoImageFr
+};
+
+const stampImages: Record<string, string> = {
+  pt: stampImagePt,
+  en: stampImageEn,
+  es: stampImageEs,
+  fr: stampImageFr
+};
 
 const ArrowIcon = () => (
   <svg
@@ -45,6 +65,8 @@ const ArrowIcon = () => (
 export const Home: React.FC = () => {
   const { language } = useLanguage();
   const t = homeTranslations[language];
+  const payltInfoImage = payltInfoImages[language] ?? payltInfoImagePt;
+  const stampImage = stampImages[language] ?? stampImagePt;
   const videoplatRef = useRef<HTMLVideoElement>(null);
   const topEdgeRef = useRef<HTMLDivElement>(null);
   const levelImgRef = useRef<HTMLImageElement>(null);
@@ -195,7 +217,7 @@ export const Home: React.FC = () => {
           </AnimateOnScroll>
           <AnimateOnScroll animation="fadeIn" delay={200} duration={0.8} className="home__intro-selo-wrapper">
             <img
-              src={seloImage}
+              src={stampImage}
               alt={language === 'pt' ? 'Uma solução para todo o tipo de contentores' : 'A solution for all types of containers'}
               className="home__intro-selo"
             />
@@ -420,17 +442,7 @@ export const Home: React.FC = () => {
             <h2 className="home__rise-above-title">{t.riseAbove.title}</h2>
           </AnimateOnScroll>
           <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
-            <p className="home__rise-above-text">
-              {language === 'pt' ? (
-                <>
-                  <span className="home__rise-above-text--black">A plataforma SOTKIS</span>, que inclui o portal online e a app, consiste num sistema integrado de gestão que recolhe e trata informações sobre os diversos processos envolvidos na deposição e/ou recolha de resíduos.
-                </>
-              ) : (
-                <>
-                  <span className="home__rise-above-text--black">The SOTKIS platform</span>, which includes the online portal and the app, consists of an integrated management system that collects and manages information on the processes involved in the disposal and/or collection of waste.
-                </>
-              )}
-            </p>
+            <p className="home__rise-above-text" dangerouslySetInnerHTML={{ __html: t.riseAbove.text }} />
           </AnimateOnScroll>
           <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
             <Button href="/platform" variant="primary" size="sm">
