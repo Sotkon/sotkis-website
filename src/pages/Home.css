@@ -1712,7 +1712,7 @@
     padding: 0;
     padding-top: 80px;
     border-radius: 0 0 1rem 1rem;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   .home__hero-wave-canvas {
@@ -1726,11 +1726,13 @@
   .home__hero-content {
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
+    justify-content: flex-start;
     justify-items: center;
     align-items: center;
     text-align: center;
     max-width: 100%;
     box-sizing: border-box;
+    padding-top: 20px;
   }
 
   .home__hero-heading {
@@ -1747,7 +1749,15 @@
   }
 
   .home__hero-capa-image {
-    display: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    object-position: center bottom;
   }
 
   .home__hero-description {
