@@ -424,6 +424,14 @@ export const Home: React.FC = () => {
 
       {/* Rise Above Section */}
       <section className="home__rise-above-container">
+        <div className="home__rise-above-content">
+          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
+            <h2 className="home__rise-above-title">{t.riseAbove.title}</h2>
+          </AnimateOnScroll>
+          <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
+            <p className="home__rise-above-text" dangerouslySetInnerHTML={{ __html: t.riseAbove.text }} />
+          </AnimateOnScroll>
+        </div>
         <div className="home__rise-above-video-wrapper">
           <div ref={topEdgeRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }} />
           <video
@@ -437,20 +445,12 @@ export const Home: React.FC = () => {
             <source src={videoplatVideo} type="video/mp4" />
           </video>
         </div>
-        <div className="home__rise-above-content">
-          <AnimateOnScroll animation="fadeSlideUp" delay={0} duration={0.8}>
-            <h2 className="home__rise-above-title">{t.riseAbove.title}</h2>
-          </AnimateOnScroll>
-          <AnimateOnScroll animation="fadeSlideUp" delay={200} duration={0.8}>
-            <p className="home__rise-above-text" dangerouslySetInnerHTML={{ __html: t.riseAbove.text }} />
-          </AnimateOnScroll>
-          <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container">
-            <Button href="/platform" variant="primary" size="sm">
-              {t.riseAbove.button}
-              <ArrowIcon />
-            </Button>
-          </AnimateOnScroll>
-        </div>
+        <AnimateOnScroll animation="fadeSlideUp" delay={400} duration={0.8} className="home__button-container home__rise-above-button-container">
+          <Button href="/platform" variant="primary" size="sm">
+            {t.riseAbove.button}
+            <ArrowIcon />
+          </Button>
+        </AnimateOnScroll>
       </section>
 
       {/* T4G App Section */}
@@ -467,7 +467,7 @@ export const Home: React.FC = () => {
                 {t.t4g.description}
               </p>
             </AnimateOnScroll>
-            <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8} className="home__button-container">
+            <AnimateOnScroll animation="fadeSlideUp" delay={500} duration={0.8} className="home__button-container home__section--t4g-desktop-button">
               <Button href="/trash4goods" variant="primary" size="sm">
                 {t.t4g.button}
                 <ArrowIcon />
@@ -475,6 +475,12 @@ export const Home: React.FC = () => {
             </AnimateOnScroll>
           </div>
         </div>
+        <AnimateOnScroll animation="fadeSlideUp" delay={300} duration={0.8} className="home__button-container home__section--t4g-mobile-button">
+          <Button href="/trash4goods" variant="primary" size="sm">
+            {t.t4g.button}
+            <ArrowIcon />
+          </Button>
+        </AnimateOnScroll>
       </section>
 
       {/* Paylt Info Section */}
