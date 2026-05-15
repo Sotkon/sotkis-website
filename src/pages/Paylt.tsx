@@ -92,7 +92,7 @@ const closeVideoModal = () => {
                 <div className="paylt__hero-scheme-pill">Software</div>
                 <span className="paylt__hero-scheme-plus">+</span>
                 <div className="paylt__hero-scheme-pill paylt__hero-scheme-pill--dark">
-                  {language === 'pt' ? 'App Cidadão' : 'Citizen App'}
+                  {tAny.hero?.citizenApp || 'Citizen App'}
                 </div>
               </div>
               <div className="paylt__hero-scheme-arrow">
@@ -108,11 +108,7 @@ const closeVideoModal = () => {
               </div>
             </div>
             <h2 className="paylt__scheme-heading paylt__scheme-heading--hero">
-              {language === 'pt' ? (
-                <>Todas as soluções <span className="paylt__scheme-heading-pill">SOTKIS</span> num único ecossistema</>
-              ) : (
-                <>All <span className="paylt__scheme-heading-pill">SOTKIS</span> solutions in a single ecosystem.</>
-              )}
+              {tAny.hero?.ecosystemBefore || 'All'} <span className="paylt__scheme-heading-pill">SOTKIS</span> {tAny.hero?.ecosystemAfter || 'solutions in a single ecosystem.'}
             </h2>
             <button className="paylt__hero-button" onClick={() => setIsVideoModalOpen(true)}>
               <span>{tAny.video?.button || 'Play Video'}</span>

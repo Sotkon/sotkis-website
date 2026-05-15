@@ -2,7 +2,10 @@ export const payltTranslations = {
   pt: {
     hero: {
       title: "P(L)AYT",
-      subtitle: "Soluções para o sistema de pagamento de resíduos PAYT!"
+      subtitle: "Soluções para o sistema de pagamento de resíduos PAYT!",
+      citizenApp: "App Cidadão",
+      ecosystemBefore: "Todas as soluções",
+      ecosystemAfter: "num único ecossistema"
     },
     intro: {
       title: "Sotkis P(L)AYT",
@@ -97,7 +100,10 @@ export const payltTranslations = {
   en: {
     hero: {
       title: "P(L)AYT",
-      subtitle: "All SOTKIS solutions in a single ecosystem."
+      subtitle: "All SOTKIS solutions in a single ecosystem.",
+      citizenApp: "Citizen App",
+      ecosystemBefore: "All",
+      ecosystemAfter: "solutions in a single ecosystem."
     },
     intro: {
       title: "SOTKIS P(L)AYT",
@@ -192,7 +198,10 @@ export const payltTranslations = {
   es: {
     hero: {
       title: "Sotkon Waste Systems",
-      subtitle: "¡Soluciones para el sistema de pago de residuos PAYT!"
+      subtitle: "¡Soluciones para el sistema de pago de residuos PAYT!",
+      citizenApp: "App Ciudadano",
+      ecosystemBefore: "Todas las soluciones",
+      ecosystemAfter: "en un único ecosistema"
     },
     intro: {
       title: "P(L)ayt",
@@ -287,7 +296,10 @@ export const payltTranslations = {
   fr: {
     hero: {
       title: "Sotkon Waste Systems",
-      subtitle: "Solutions pour le système de paiement des déchets PAYT !"
+      subtitle: "Solutions pour le système de paiement des déchets PAYT !",
+      citizenApp: "App Citoyen",
+      ecosystemBefore: "Toutes les solutions",
+      ecosystemAfter: "au sein d'un écosystème unique"
     },
     intro: {
       title: "P(L)ayt",
