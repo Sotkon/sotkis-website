@@ -946,7 +946,7 @@
 }
 
 .home__section--t4g .home__section-text {
-  font-weight: 700;
+  font-weight: 400;
   font-size: calc(var(--font-size-base) + 4px);
   /* Increased by 3px from previous (base+1px) */
 }
