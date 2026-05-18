@@ -1712,7 +1712,7 @@
     padding: 0;
     padding-top: 80px;
     border-radius: 0 0 1rem 1rem;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   .home__hero-wave-canvas {
@@ -1726,11 +1726,13 @@
   .home__hero-content {
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
+    justify-content: flex-start;
     justify-items: center;
     align-items: center;
     text-align: center;
     max-width: 100%;
     box-sizing: border-box;
+    padding-top: 20px;
   }
 
   .home__hero-heading {
@@ -1747,7 +1749,15 @@
   }
 
   .home__hero-capa-image {
-    display: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    object-position: center bottom;
   }
 
   .home__hero-description {
@@ -2198,9 +2208,10 @@
 
 @media (max-width: 480px) {
   .home__hero {
-    min-height: 500px;
-    padding: var(--spacing-2xl) 0;
-    padding-top: calc(var(--spacing-3xl) + 50px);
+    min-height: 620px;
+    height: 82vh;
+    padding: 0;
+    padding-top: calc(var(--spacing-3xl) + 26px);
     border-radius: 0 0 0.75rem 0.75rem;
   }
 
@@ -2209,7 +2220,7 @@
   }
 
   .home__hero-bg-image--mobile {
-    display: block;
+    display: none;
   }
 
   .home__hero-overlay {
@@ -2217,11 +2228,43 @@
   }
 
   .home__hero-content {
-    gap: var(--spacing-lg);
+    justify-content: flex-start;
+    gap: var(--spacing-sm);
+    height: calc(82vh - var(--spacing-3xl) - 26px);
+    min-height: 520px;
+    padding-top: var(--spacing-sm);
+    padding-bottom: 0;
   }
 
   .home__hero-heading {
-    font-size: clamp(3rem, 9vw, 3.5rem);
+    font-size: clamp(2.75rem, 8.6vw, 3.35rem);
+    position: relative;
+    z-index: 15;
+  }
+
+  .home__hero-subtitle {
+    position: relative;
+    z-index: 15;
+    max-width: 92%;
+    margin-top: 0;
+    font-size: var(--font-size-sm);
+    line-height: 1.35;
+  }
+
+  .home__hero-capa-image {
+    display: none;
+  }
+
+  .home__hero-iphone-mockup {
+    display: block;
+    width: min(104vw, 485px);
+    left: 48%;
+    right: auto;
+    bottom: 0;
+    transform: translateX(-50%);
+    animation: none !important;
+    opacity: 1;
+    z-index: 11;
   }
 
   .home__hero-description {
